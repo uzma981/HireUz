@@ -8,8 +8,8 @@ function NavBar() {
     <div>
       <nav className="bg-white px-2 sm:px-4 py-2.5 rounded justify-end">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 justify-end">
-          <div className="flex items-center justify-between h-16">
-            <div className="flex items-end ">
+          <div className="flex items-end justify-between h-16">
+            <div className="flex items-end">
               <div className="flex-shrink-0 flex-row">
                 {/* <img
                   className="h-8 w-8"

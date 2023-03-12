@@ -2,8 +2,21 @@ import React from "react";
 
 export default function About() {
   return (
-    <div>
-      <section className="py-20 text-center">
+    <div className="">
+      <div className="py-5 ml-5 mr-5">
+        <h2 className="text-purple-800 font-bold text-2xl mb-5 text-center sm:text-3xl md:text-4xl">
+          About us
+        </h2>
+        <div>
+          <p className="justify-center items-center">
+            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+            eiusmod tempor incididunt ut labore et dolore magna aliqua. Amet
+            porttitor eget dolor morbi non arcu risus quis. Risus quis varius
+            quam quisque id. In ornare quam viverra orci.
+          </p>
+        </div>
+      </div>
+      <section className="py-10 text-center">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 md:px-8">
           <h1 className="text-3xl font-bold md:text-4xl">
             Our company values.
