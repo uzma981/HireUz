@@ -14,7 +14,7 @@ export default function Clients() {
           </p>
         </div>
       </section>
-      <div className="bg-black mt-5 py-10 md:px-10 md:py-10 ">
+      <div className="bg-black py-10 md:px-10 md:py-10 ">
         <section className="mt-5 mb-5 ">
           <div className="mr-3 ml-3 flex flex-col md:flex-row md:items-center">
             <div className="md:w-1/2 md:pr-10">

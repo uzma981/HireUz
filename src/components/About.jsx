@@ -17,8 +17,8 @@ export default function About() {
         </div>
       </div>
 
-      <section className="py-10 bg-black ">
-        <div className="mx-auto max-w-7xl px-6 lg:px-2">
+      <section className="py-10 bg-black justify-center ">
+        <div className="mx-auto max-w-7xl px-6 lg:px-2 ">
           <h1 className="text-3xl font-bold md:text-4xl text-white md:text-center">
             Our company values.
           </h1>
@@ -26,7 +26,7 @@ export default function About() {
             Guided by these values, we strive to make a positive impact in
             everything we do.
           </p>
-          <div className="mt-12 grid grid-auto-fit gap-10">
+          <div className="mt-12 grid grid-auto-fit gap-10 ">
             <div className="grid2-item card bg-base-100 shadow-xl image-full ">
               <figure>
                 <img src="src\img\landingpage.jpg" alt="honestyimage" />
