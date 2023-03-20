@@ -10,10 +10,7 @@ import {
 export default function Home() {
   return (
     <div className="">
-      <div className="p-10 py-20 bg-gradient-to-r from-violet-500 to-fuchsia-500 relative w-full">
-        {/* <h2 className="text-5xl py-2 text-white font-medium md:text-6xl">
-    Hire Uz
-  </h2> */}
+      <div className=" p-10 py-20 px-20 bg-gradient-to-r from-violet-500 to-fuchsia-500 relative w-full ">
         <h2 className="text-center mb-2 text-3xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-4xl">
           Best-in-Class Recruitment for Women in Tech
         </h2>
