@@ -34,7 +34,9 @@ export default function NavBar2() {
             </li>
 
             <li>
-              <a className=" text-gray-500">Candidates</a>
+              <Link to="/candidates" className="text-gray-500">
+                Candidates
+              </Link>
             </li>
             <li>
               <Link to="/clients" className="text-gray-500">
@@ -72,7 +74,9 @@ export default function NavBar2() {
           </li>
 
           <li>
-            <a className="text-gray-300">Candidates</a>
+            <Link to="/candidates" className="text-gray-300">
+              Candidates
+            </Link>
           </li>
           <li>
             <Link to="/clients" className="text-gray-300">

@@ -10,6 +10,7 @@ import SignUp from "./components/SignUp";
 import Careers from "./components/Careers";
 import Guides from "./components/Guides";
 import Clients from "./components/Clients";
+import Candidates from "./components/Candidates";
 
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 function App() {
@@ -19,6 +20,7 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />}></Route>
         <Route path="/about" element={<About />}></Route>
+        <Route path="/candidates" element={<Candidates />}></Route>
         <Route path="/clients" element={<Clients />}></Route>
         <Route path="/guides" element={<Guides />}></Route>
         <Route path="/careers" element={<Careers />}></Route>
