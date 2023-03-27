@@ -121,29 +121,32 @@ export default function Home() {
       </section>
       <div className="justify-center py:4 lg:py-8 bg-purple-400 ">
         <div className=" justify-center py-2 mt-9 m-10 grid-auto-fit md:m-5 lg:grid lg:grid-cols-2 lg:gap-4 lg:m-20">
-          <div className="justify-center lg:py-4 lg:ml-8 lg:justify-end">
-            <h2 className="mt-4 text-center font-semibold text-2xl md:text-2xl xl:text-4xl md:text-left">
+          <div className="justify-center text-center lg:py-4 lg:ml-8 lg:justify-end">
+            <h2 className="mt-4 text-center font-semibold text-2xl md:text-2xl xl:text-4xl lg:text-left">
               Opportunities for career growth
             </h2>
-            <p className="py-4 text-center md:text-right lg:text-left text-gray-700 max-w-lg md:max-w-xl">
-              We understand that career growth is an essential component of job
-              satisfaction, and we are dedicated to investing the time, effort,
-              and resources necessary to provide opportunities for professional
-              advancement.
-            </p>
+            <div className="text-center justify-center">
+              <p className="py-4  justify-center lg:text-left text-gray-700 max-w-lg md:max-w-xl">
+                We understand that career growth is an essential component of
+                job satisfaction, and we are dedicated to investing the time,
+                effort, and resources necessary to provide opportunities for
+                professional advancement.
+              </p>
 
-            <p className="py-4 text-center lg:text-left text-gray-700 max-w-lg md:max-w-xl ">
-              We work closely with our clients to identify roles that align with
-              your skill sets, interests, and long-term career goals. We also
-              offer training and mentoring programs to help women in tech
-              acquire new skills and knowledge, stay up-to-date with the latest
-              industry trends, and advance their careers.
-            </p>
-            <p className="py-4 text-center lg:text-left text-gray-700 max-w-lg md:max-w-xl">
-              We believe that by investing in the career growth of women, we not
-              only support their personal and professional development but also
-              contribute to creating a more diverse and inclusive tech industry.
-            </p>
+              <p className="py-4  justify-center lg:text-left text-gray-700 max-w-lg md:max-w-xl ">
+                We work closely with our clients to identify roles that align
+                with your skill sets, interests, and long-term career goals. We
+                also offer training and mentoring programs to help women in tech
+                acquire new skills and knowledge, stay up-to-date with the
+                latest industry trends, and advance their careers.
+              </p>
+              <p className="py-4  justify-center lg:text-left text-gray-700 max-w-lg md:max-w-xl">
+                We believe that by investing in the career growth of women, we
+                not only support their personal and professional development but
+                also contribute to creating a more diverse and inclusive tech
+                industry.
+              </p>
+            </div>
           </div>
           <div className="flex justify-center mr-5 md:justify-center ">
             <img

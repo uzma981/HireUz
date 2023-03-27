@@ -12,7 +12,7 @@ export default function Clients() {
             of building a team that reflects the diverse communities we serve is
             crucial for success. That's why we are dedicated to helping you find
             and hire talented women who can bring a fresh perspective and unique
-            skills to your organization.Contact us today to learn more about our
+            skills to your organization. Contact us today to learn more about our
             recruitment services and how we can help you achieve your hiring
             goals.
           </p>
