@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link ,useNavigate} from "react-router-dom";
 import { useState } from "react";
 import { auth } from "./firebase";
 import { signInWithEmailAndPassword } from "firebase/auth";
@@ -7,12 +7,13 @@ export default function LoginForm() {
   const [email, setEmail] = useState("");
 
   const [password, setPassword] = useState("");
-
+const navigate = useNavigate();
   const signIn = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
+          navigate('/userProfile');
       })
       .catch((error) => {
         console.log(error);

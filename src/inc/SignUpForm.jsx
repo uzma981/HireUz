@@ -1,12 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from 'react-router-dom';
 import { useState } from "react";
 import { auth } from "./firebase";
 import { createUserWithEmailAndPassword } from "firebase/auth";
 
 export default function SignUpForm() {
   const [email, setEmail] = useState("");
-
+ const navigate = useNavigate();
   const [password, setPassword] = useState("");
 
   const signup = (e) => {
@@ -14,6 +14,7 @@ export default function SignUpForm() {
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
+          navigate('/login'); // redirect user to login page
       })
       .catch((error) => {
         console.log(error);
