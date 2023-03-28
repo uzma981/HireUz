@@ -1,6 +1,23 @@
-import React from "react";
+import React from 'react';
 
 export default function Clients() {
+  //   const [name, setName] = useState('');
+  //   const [email, setEmail] = useState('');
+  //   const [phone, setPhone] = useState('');
+  //  const handleSubmit = (event) => {
+  //    event.preventDefault();
+
+  //    fetch('http://localhost:3000/submit', {
+  //      method: 'POST',
+  //      headers: {
+  //        'Content-Type': 'application/json',
+  //      },
+  //      body: JSON.stringify({ name, email, phone }),
+  //    })
+  //      .then((response) => response.text())
+  //      .then((data) => console.log(data))
+  //      .catch((error) => console.error(error));
+  //  };
   return (
     <div className="">
       <section className="bg-white py-5 mt-5 mb-5">
@@ -12,8 +29,8 @@ export default function Clients() {
             of building a team that reflects the diverse communities we serve is
             crucial for success. That's why we are dedicated to helping you find
             and hire talented women who can bring a fresh perspective and unique
-            skills to your organization. Contact us today to learn more about our
-            recruitment services and how we can help you achieve your hiring
+            skills to your organization. Contact us today to learn more about
+            our recruitment services and how we can help you achieve your hiring
             goals.
           </p>
         </div>
@@ -73,39 +90,49 @@ export default function Clients() {
               <p className="text-white mb-2 mt-2">View our privacy policy</p>
             </div>
             <div className="md:w-1/2">
-              <input
-                name="first_name"
-                placeholder="Name*"
-                type="text"
-                className="w-full mb-5 py-2 bg-transparent "
-              ></input>
-              <input
-                name="email"
-                placeholder="Email*"
-                type="text"
-                className="w-full py-2 mb-5 bg-transparent "
-              ></input>
-              <input
-                name="Phone*"
-                placeholder="Phone*"
-                type="text"
-                className="w-full py-2 mb-5 bg-transparent "
-              ></input>
-              <div className="">
-                <label className="items-end text-gray-300">
-                  How can we help?
-                </label>
-                <textarea
-                  className="bg-gray-300 w-full py-10"
-                  name="question"
-                ></textarea>
-              </div>
-              <button
-                className="text-white mt-5 ml-5 items-center border-4 px-10 md:px-20 md:ml-0 "
-                placeholder="Submit"
-              >
-                Submit
-              </button>
+              <form action="/submit" method="POST">
+                <input
+                  id="client_name"
+                  name="client_name"
+                  placeholder="Name*"
+                  type="text"
+                  className="w-full mb-5 py-2 bg-transparent text-white "
+                ></input>
+                <input
+                  id="client_email"
+                  name="email"
+                  placeholder="Email*"
+                  type="text"
+                  className="w-full py-2 mb-5 bg-transparent text-white "
+                ></input>
+                <input
+                  id="client_phone"
+                  name="Phone*"
+                  placeholder="Phone*"
+                  type="text"
+                  className="w-full py-2 mb-5 bg-transparent text-white "
+                ></input>
+                <div className="">
+                  <label className="items-end text-gray-300">
+                    How can we help?
+                  </label>
+                  <textarea
+                    id="client_message"
+                    className="bg-gray-300 w-full py-10 text-white"
+                    name="message"
+                    title="message"
+                  ></textarea>
+                </div>
+                <button
+                  className="text-white mt-5 ml-5 items-center border-4 px-10 md:px-20 md:ml-0 "
+                  placeholder="submit"
+                  name="submit"
+                  title="submit"
+                  type="submit"
+                >
+                  Submit
+                </button>
+              </form>
             </div>
           </div>
         </section>

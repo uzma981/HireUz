@@ -1,59 +1,85 @@
-import React from "react";
-import Image from "react";
-import bgImg from "../img/landingpage.jpg";
-import img from "../img/pexels-andrea-piacquadio-3769021.jpg";
-import {
-  AiFillTwitterCircle,
-  AiFillLinkedin,
-  AiFillFacebook,
-} from "react-icons/ai";
-export default function Home() {
+import React from 'react';
+import freecodeImg from '../../img/freecodecamp.png';
+import womenintechImg from '../../img/WIT.png';
+import CandidateInfo from './CandidateInfo';
+import CodeAcad from '../../img/codeacad.png';
+import LinkedIn from '../../img/linkedin.png';
+import UKGOV from '../../img/UKGOV.png';
+import UDEMY from '../../img/UDEMY.png';
+import img from '../../img/pexels-andrea-piacquadio-3769021.jpg';
+
+export default function Candidates() {
   return (
-    <div className="">
-      <div className=" p-10 py-20 px-20 bg-gradient-to-r from-violet-500 to-fuchsia-500 relative w-full ">
-        <h2 className="text-center mb-2 text-3xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-4xl">
-          Best-in-Class Recruitment for Women in Tech
-        </h2>
-        <div className="max-w-2xl mx-auto mb-4 py-5 font-light text-gray-600 lg:mb-8 md:text-lg lg:text-xl">
-          <p className="text-center">
-            We strive to bridge the gender gap in tech by actively recruiting,
-            retaining and promoting women in technology fields.
+    <div>
+      <section className="bg-white py-5 mt-5 mb-5">
+        <div className="mr-3 ml-3">
+          <h2 className="mb-5 font-bold text-5xl ">CANDIDATES PAGE</h2>
+          <p className="justify-center items-center">
+            Hire Uz is dedicated to promoting diversity and inclusion in the
+            workplace by connecting highly qualified female candidates with top
+            companies. Let us help you find your next opportunity and join the
+            growing community of women in tech. Contact us today to learn more
+            about how we can help you reach your career goals.
           </p>
         </div>
-
-        <div className="text-5xl flex justify-center gap-10 py-3 text-gray-800">
-          <AiFillTwitterCircle />
-          <AiFillLinkedin />
-          <AiFillFacebook />
+      </section>
+      <section>
+        <div className="p-5 bg-gray-100">
+          <h3 className="mb-5 font-bold text-4xl ">RESOURCES</h3>
+          <p className="justify-center items-center">
+            If you are looking to start your coding and tech journey, there are
+            many resources available to help you get started. From online
+            tutorials to coding bootcamps, there are many options to choose from
+            depending on your learning style and goals.
+          </p>
         </div>
-        <div className="text-center">
-          <a
-            href="#"
-            className="inline-flex items-end ml-2 px-5 py-3 text-base font-medium text-white rounded-lg hover:text-black focus:ring-purple-500"
-          >
-            Find out more
-            <svg
-              className="w-5 h-5 ml-2 -mr-1"
-              fill="currentColor"
-              viewBox="0 0 20 20"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                fillRule="evenodd"
-                d="M10.293 3.293a1 1 0 011.414 0l6 6a1 1 0 010 1.414l-6 6a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-4.293-4.293a1 1 0 010-1.414z"
-                clipRule="evenodd"
-              ></path>
-            </svg>
-          </a>
-        </div>
-      </div>
-      {/* <img alt="..." className="" src={bgImg}></img> */}
+      </section>
+      <CandidateInfo
+        name={'Women In Tech'}
+        info={'Click the button to explore the different free coding courses.'}
+        img={womenintechImg}
+        website="https://www.womenintech.co.uk/"
+      ></CandidateInfo>
+      <CandidateInfo
+        name={'Free Coding Camp'}
+        info={
+          'Click the button to visit the famous women in tech page to level up your knowledge'
+        }
+        img={freecodeImg}
+        website="https://www.freecodecamp.org/"
+      ></CandidateInfo>
+      <CandidateInfo
+        name={'Code Academy'}
+        info={'Click the button to explore the different free coding courses.'}
+        img={CodeAcad}
+        website="https://www.codecademy.com/"
+      ></CandidateInfo>
+      <CandidateInfo
+        name={'Udemy'}
+        info={
+          'Udemy is packed with free/cheap courses which can help you kickstart your career journey in tech'
+        }
+        img={UDEMY}
+        website="https://www.udemy.com/"
+      ></CandidateInfo>
+      <CandidateInfo
+        name={'LinkedIn Learning'}
+        info={'Click the button to explore LinkedIn courses'}
+        img={LinkedIn}
+        website="https://www.linkedin.com/learning/"
+      ></CandidateInfo>
+      <CandidateInfo
+        name={'UK Government'}
+        info={
+          'Click the button to explore the free courses funded by the government'
+        }
+        img={UKGOV}
+        website="https://www.gov.uk/guidance/find-a-skills-bootcamp"
+      ></CandidateInfo>
       <section className="py-20 text-center">
         <div className="mx-auto max-w-7xl px-6 sm:px-8 md:px-8">
-          <h2 className="text-2xl font-bold md:text-3xl">Career paths.</h2>
-          <p className="mx-auto mt-3 max-w-xl text-md">
-            Pick the right career path
-          </p>
+          <h2 className="mb-5 font-bold text-4xl md:text-5xl">CAREER PATHS </h2>
+          <p className="mx-auto mt-3 max-w-xl text-md"></p>
           <div className="mt-12 grid grid-auto-fit gap-4">
             <div className="grid2-item py-8 px-8 bg-purple-200">
               <h3 className="font-semibold mb-4">Software Developer</h3>
@@ -160,6 +186,3 @@ export default function Home() {
     </div>
   );
 }
-// <div className="mx-auto bg-gradient-to-b from-teal-500 rounded-full w-80 h-80 relative overflow-hidden mt-20 md:h-96 md:w-96">
-//   {/* <Image src={deved} layout="fill" objectFit="cover" /> */}
-// </div>
