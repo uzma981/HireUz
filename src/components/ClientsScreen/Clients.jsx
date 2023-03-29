@@ -1,23 +1,23 @@
 import React from 'react';
-
+import { useState } from 'react';
 export default function Clients() {
-  //   const [name, setName] = useState('');
-  //   const [email, setEmail] = useState('');
-  //   const [phone, setPhone] = useState('');
-  //  const handleSubmit = (event) => {
-  //    event.preventDefault();
+  const [name, setName] = useState('');
+  const [email, setEmail] = useState('');
+  const [phone, setPhone] = useState('');
+  const [message, setMessage] = useState('');
 
-  //    fetch('http://localhost:3000/submit', {
-  //      method: 'POST',
-  //      headers: {
-  //        'Content-Type': 'application/json',
-  //      },
-  //      body: JSON.stringify({ name, email, phone }),
-  //    })
-  //      .then((response) => response.text())
-  //      .then((data) => console.log(data))
-  //      .catch((error) => console.error(error));
-  //  };
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    const response = await fetch('http://localhost:3000/submit', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({ name, email, phone, message }),
+    });
+    const data = await response.json();
+    console.log(data);
+  };
   return (
     <div className="">
       <section className="bg-white py-5 mt-5 mb-5">
@@ -90,16 +90,20 @@ export default function Clients() {
               <p className="text-white mb-2 mt-2">View our privacy policy</p>
             </div>
             <div className="md:w-1/2">
-              <form action="/submit" method="POST">
+              <form onSubmit={handleSubmit}>
                 <input
                   id="client_name"
                   name="client_name"
+                  value={name}
+                  onChange={(e) => setName(e.target.value)}
                   placeholder="Name*"
                   type="text"
                   className="w-full mb-5 py-2 bg-transparent text-white "
                 ></input>
                 <input
                   id="client_email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
                   name="email"
                   placeholder="Email*"
                   type="text"
@@ -108,6 +112,8 @@ export default function Clients() {
                 <input
                   id="client_phone"
                   name="Phone*"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value)}
                   placeholder="Phone*"
                   type="text"
                   className="w-full py-2 mb-5 bg-transparent text-white "
@@ -118,8 +124,10 @@ export default function Clients() {
                   </label>
                   <textarea
                     id="client_message"
-                    className="bg-gray-300 w-full py-10 text-white"
+                    className="bg-gray-300 w-full py-10 text-black"
                     name="message"
+                    onChange={(e) => setMessage(e.target.value)}
+                    value={message}
                     title="message"
                   ></textarea>
                 </div>
