@@ -4,6 +4,7 @@ import Recruiter from '../Recruiter';
 import team3 from '../../img/team3.jpg';
 import team4 from '../../img/team4.jpg';
 import team6 from '../../img/team6.jpg';
+
 export default function Team() {
   return (
     <div className="container my-24 px-6 mx-auto">
@@ -16,7 +17,7 @@ export default function Team() {
           <Recruiter
             img={team1}
             name={'Alan Turing'}
-            description={'Senior Talent Acquisition Partner'}
+            description={'Talent Acquisition Partner'}
           ></Recruiter>
           <Recruiter
             img={team3}
