@@ -15,6 +15,12 @@ export default function Clients() {
       },
       body: JSON.stringify({ name, email, phone, message }),
     });
+    if (response.status === 201) {
+      const formContainer = document.querySelector('#form-container');
+      formContainer.innerHTML = `
+  <div class="text-3xl font-semibold mb-5 text-white">Thank you for registering! We are looking forward to working with you soon.</div>
+`;
+    }
     const data = await response.json();
     console.log(data);
   };
@@ -90,7 +96,7 @@ export default function Clients() {
               <p className="text-white mb-2 mt-2">View our privacy policy</p>
             </div>
             <div className="md:w-1/2">
-              <form onSubmit={handleSubmit}>
+              <form onSubmit={handleSubmit} id="form-container">
                 <input
                   id="client_name"
                   name="client_name"
