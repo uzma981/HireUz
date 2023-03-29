@@ -4,6 +4,7 @@ import {
   AiFillLinkedin,
   AiFillFacebook,
 } from 'react-icons/ai';
+import Team from './Team';
 import ValuesCard from './ValuesCard';
 export default function About() {
   return (
@@ -45,7 +46,7 @@ export default function About() {
           </a>
         </div>
       </div>
-      <section className="bg-white py-5 mt-5 mb-5">
+      {/* <section className="bg-white py-5 mt-5 mb-5">
         <div className="mr-3 ml-3">
           <h2 className="mb-5 font-bold text-5xl ">ABOUT US </h2>
           <p className="justify-center items-center">
@@ -55,10 +56,10 @@ export default function About() {
             while ensuring that the best candidates are selected.
           </p>
         </div>
-      </section>
+      </section> */}
 
       <section className="py-10 bg-black justify-center ">
-        <div className="mx-auto max-w-7xl px-6 lg:px-2 ">
+        <div className="mx-auto max-w-7xl px-4 lg:px-2 ">
           <h1 className="text-3xl font-bold md:text-4xl text-white md:text-center">
             OUR COMPANY VALUES
           </h1>
@@ -66,7 +67,7 @@ export default function About() {
             Guided by these values, we strive to make a positive impact in
             everything we do.
           </p>
-          <div className="mt-12 grid grid-auto-fit gap-10 ">
+          <div className="mt-12  gap-10 grid md:grid-cols-2 lg:grid-cols-4 gap-x-6 lg:gap-xl-12 ">
             <ValuesCard
               valueName={'Honesty'}
               valueText={
@@ -94,6 +95,7 @@ export default function About() {
           </div>
         </div>
       </section>
+      <Team />
     </div>
   );
 }
