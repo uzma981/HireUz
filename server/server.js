@@ -62,6 +62,7 @@ app.get('/', (req, res) => {
   res.set({
     'Allow-access-Allow-Origin': '*',
   });
+  res.send('Hello World');
 });
 
 app.post('/submit', (req, res) => {
