@@ -6,6 +6,7 @@ import {
 } from 'react-icons/ai';
 import Team from './Team';
 import ValuesCard from './ValuesCard';
+import Footer from '../Footer';
 export default function About() {
   return (
     <div className="">
@@ -57,7 +58,6 @@ export default function About() {
           </p>
         </div>
       </section> */}
-
       <section className="py-10 bg-black justify-center ">
         <div className="mx-auto max-w-7xl px-4 lg:px-2 ">
           <h1 className="text-3xl font-bold md:text-4xl text-white md:text-center">
@@ -96,6 +96,7 @@ export default function About() {
         </div>
       </section>
       <Team />
+      <Footer />
     </div>
   );
 }

@@ -1,5 +1,6 @@
 import React from 'react';
 import { useState } from 'react';
+import Footer from '../Footer';
 export default function Clients() {
   const [name, setName] = useState('');
   const [email, setEmail] = useState('');
@@ -151,6 +152,7 @@ export default function Clients() {
           </div>
         </section>
       </div>
+      <Footer />
     </div>
   );
 }
