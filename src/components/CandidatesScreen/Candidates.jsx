@@ -6,7 +6,7 @@ import CodeAcad from '../../img/codeacad.png';
 import LinkedIn from '../../img/linkedin.png';
 import UKGOV from '../../img/UKGOV.png';
 import UDEMY from '../../img/UDEMY.png';
-import img from '../../img/pexels-andrea-piacquadio-3769021.jpg';
+import img from '../../img/team2.jpg';
 
 export default function Candidates() {
   return (
