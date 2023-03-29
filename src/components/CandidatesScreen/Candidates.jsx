@@ -7,7 +7,7 @@ import LinkedIn from '../../img/linkedin.png';
 import UKGOV from '../../img/UKGOV.png';
 import UDEMY from '../../img/UDEMY.png';
 import img from '../../img/team2.jpg';
-
+import Footer from '../Footer';
 export default function Candidates() {
   return (
     <div>
@@ -183,6 +183,7 @@ export default function Candidates() {
           </div>
         </div>
       </div>
+      <Footer></Footer>
     </div>
   );
 }
