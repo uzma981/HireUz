@@ -19,7 +19,7 @@ export default function Search() {
           </div>
         </form>
       </div>
-      <div className="">
+      {/* <div className="">
         <JobCard
           jobTitle={'Software Developer'}
           jobDescription={'Creating back end applications..'}
@@ -35,7 +35,7 @@ export default function Search() {
           jobDescription={'Creating Python back end applications..'}
           jobReq={'2+ years of experience is needed'}
         />
-      </div>
+      </div> */}
     </div>
   );
 }

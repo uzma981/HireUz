@@ -10,7 +10,7 @@ import Login from '../Login';
 import SignUp from '../SignUp';
 import Navbar2 from './NavBar2';
 
-import Profile from '../Profile';
+import Profile from '../ProfileScreen/Profile';
 function MainNavigation() {
   return (
     <Router>
