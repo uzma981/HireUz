@@ -18,9 +18,9 @@ export default function JobTable2({
         </a>
       </div>
 
-      <div className="md:block flex justify-between md:mt-0 mt-4">
+      <div className=" flex justify-between md:mt-0 mt-4">
         <span className="block">
-          <span className="bg-emerald-600/10 inline-block text-purple-800 text-xs px-2.5 py-0.5 font-semibold rounded-full">
+          <span className="bg-emerald-600/10 inline-block text-purple-800 text-xs px-2.5 py-0.5 mr-5 font-semibold rounded-full">
             {employeeType}
           </span>
         </span>
