@@ -2,6 +2,7 @@ const bodyParser = require('body-parser');
 const express = require('express');
 const mongoose = require('mongoose');
 const User = require('./clientuser');
+const Job = require('./jobs');
 const app = express();
 
 // Set up middleware
@@ -18,8 +19,21 @@ app.use((req, res, next) => {
 });
 
 // Set up routes
-app.get('/submit', (req, res) => {
-  res.send('hELLOW');
+app.get('/submit', async (req, res) => {
+  try {
+    const users = await User.find();
+    res.status(200).json(users);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+app.get('/jobs', async (req, res) => {
+  try {
+    const jobs = await Job.find();
+    res.status(200).json(jobs);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
 });
 app.post('/submit', async (req, res) => {
   const { name, email, phone, message } = req.body;
