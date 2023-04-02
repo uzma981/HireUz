@@ -1,9 +1,28 @@
 import React from 'react';
 import Search from '../Search';
-import JobTable from '../JobsScreen/JobTable';
+import JobTable from '../JobsScreen/JobTableNIU';
 import JobDetails from '../JobsScreen/JobDetails';
 import JobTable2 from '../JobsScreen/JobTable2';
+import axios from 'axios';
+import { useState, useEffect } from 'react';
 export default function Profie() {
+  const [jobs, setJobs] = useState(null);
+
+  const getJobs = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/jobs');
+      const data = response.data;
+      setJobs(data);
+      console.log(data);
+      return data;
+    } catch (error) {
+      console.log('no jobs');
+      return null;
+    }
+  };
+  useEffect(() => {
+    getJobs();
+  }, []);
   return (
     <div>
       <Search></Search>
@@ -38,34 +57,21 @@ export default function Profie() {
         }
         jobExp4={'Basic know how of Agile process and practices'}
       /> */}
-      <JobTable2
-        jobName={'Back end Developer'}
-        employeeType={'Full Time'}
-        datePosted={' 28th March, 2023'}
-        salary={'£4000 - £45000'}
-        location={' Ao.com Manchester, UK'}
-      />
-      <JobTable2
-        jobName={'Security Specialist'}
-        employeeType={'Full Time'}
-        datePosted={' 28th March, 2023'}
-        salary={'£4000 - £45000'}
-        location={' Ao.com Manchester, UK'}
-      />
-      <JobTable2
-        jobName={'Front end Developer'}
-        employeeType={'Full Time'}
-        datePosted={' 28th March, 2023'}
-        salary={'£4000 - £45000'}
-        location={' Ao.com Manchester, UK'}
-      />
-      <JobTable2
-        jobName={'UX Designer'}
-        employeeType={'Full Time'}
-        datePosted={' 28th March, 2023'}
-        salary={'£4000 - £45000'}
-        location={' Ao.com Manchester, UK'}
-      />
+
+      <ul>
+        {jobs &&
+          jobs.map((job) => (
+            <div key={job._id}>
+              <JobTable2
+                jobName={job.jobTitle}
+                employeeType={job.employeeType}
+                datePosted={job.datePosted}
+                salary={job.salary}
+                location={job.location}
+              />
+            </div>
+          ))}
+      </ul>
     </div>
   );
 }

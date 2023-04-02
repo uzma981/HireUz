@@ -1,7 +1,26 @@
-import React, { useState } from 'react';
-
+import React, { useEffect, useState } from 'react';
+import axios from 'axios';
 function JobTable() {
   const [show, setShow] = useState(null);
+  const [jobs, setJobs] = useState(null);
+
+  const getJobs = async () => {
+    axios
+      .get('http://localhost:3000/jobs')
+      .then((response) => {
+        const data = response.data;
+        setJobs(data);
+        console.log('data received');
+      })
+      .catch(() => {
+        console.log('no jobs');
+      });
+    return response.data;
+  };
+  useEffect(() => {
+    getJobs();
+  });
+
   return (
     <>
       <div className="w-full sm:px-6">
