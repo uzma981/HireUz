@@ -45,6 +45,34 @@ app.post('/submit', async (req, res) => {
   }
 });
 
+app.post('/jobs', async (req, res) => {
+  const {
+    jobTitle,
+    datePosted,
+    location,
+    salary,
+    employeeType,
+    jobDescription,
+    jobDuties,
+    jobExperience,
+  } = req.body;
+  try {
+    const job = await Job.create({
+      jobTitle,
+      datePosted,
+      location,
+      salary,
+      employeeType,
+      jobDescription,
+      jobDuties,
+      jobExperience,
+    });
+    res.status(201).json(job);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
 // Connect to MongoDB
 mongoose
   .connect(
