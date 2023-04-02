@@ -1,19 +1,21 @@
-import React from "react";
-import { Link ,useNavigate} from "react-router-dom";
-import { useState } from "react";
-import { auth } from "./firebase";
-import { signInWithEmailAndPassword } from "firebase/auth";
+import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import { useState } from 'react';
+import { auth } from './firebase';
+import { signInWithEmailAndPassword } from 'firebase/auth';
 export default function LoginForm() {
-  const [email, setEmail] = useState("");
+  const [email, setEmail] = useState('');
 
-  const [password, setPassword] = useState("");
-const navigate = useNavigate();
+  const [password, setPassword] = useState('');
+  const navigate = useNavigate();
   const signIn = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
-          navigate('/userProfile');
+        const id = localStorage.setItem('id');
+        const token = localStorage.setItem('token');
+        navigate('/userProfile');
       })
       .catch((error) => {
         console.log(error);
@@ -55,7 +57,7 @@ const navigate = useNavigate();
               >
                 Remember for 30 days
               </label>
-            </div>{" "}
+            </div>{' '}
             <button className=" ml-5 font-medium text-base text-violet-800">
               Forgot password
             </button>
