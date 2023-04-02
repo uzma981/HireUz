@@ -13,8 +13,8 @@ export default function LoginForm() {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
-        const id = localStorage.setItem('id');
-        const token = localStorage.setItem('token');
+        // const id = localStorage.setItem('id');
+        // const token = localStorage.setItem('token');
         navigate('/userProfile');
       })
       .catch((error) => {
