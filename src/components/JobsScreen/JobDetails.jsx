@@ -1,34 +1,40 @@
 import React from 'react';
+import { useParams } from 'react-router-dom';
+import { useEffect, useState } from 'react';
+import axios from 'axios';
+export default function JobDetails() {
+  const { jobId } = useParams();
+  const [job, setJob] = useState(null);
+  const getJobs = async () => {
+    try {
+      const response = await axios.get('http://localhost:3000/jobs/' + jobId);
+      const data = response.data;
+      setJob(data);
+      console.log(data);
+      return data;
+    } catch (error) {
+      console.log('no jobs');
+      return null;
+    }
+  };
+  useEffect(() => {
+    getJobs();
+  }, [jobId]);
 
-export default function JobDetails({
-  jobName,
-  employeeType,
-  location,
-  salary,
-  datePosted,
-  jobDescription1,
-  jobDescription2,
-  jobDescription3,
-  jobDuties1,
-  jobDuties2,
-  jobDuties3,
-  jobDuties4,
-  jobExp1,
-  jobExp2,
-  jobExp3,
-  jobExp4,
-}) {
+  if (!job) {
+    return <div>Loading...</div>;
+  }
   return (
     <div className="container mt-10">
       <div className="grid md:grid-cols-12 grid-cols-1 gap-[30px]">
         <div className="lg:col-span-4 md:col-span-6">
           <div className="p-6 shadow dark:shadow-gray-700 rounded-md bg-white dark:bg-slate-900 sticky top-20">
             <div className="md:ltr:ml-4 md:rtl:mr-4 mt-4">
-              <h5 className="text-xl font-semibold">{jobName}</h5>
+              <h5 className="text-xl font-semibold">{job.jobTitle}</h5>
               <div className="mt-1">
                 <span className="text-slate-400 font-medium ltr:mr-2 rtl:ml-2 inline-block">
                   <i className="uil uil-building text-[18px] text-purple-800 ltr:mr-1 rtl:ml-1"></i>{' '}
-                  {location}
+                  {job.location}
                 </span>
                 {/* <span className="text-slate-400 font-medium ltr:mr-2 rtl:ml-2 inline-block">
                   <i className="uil uil-map-marker text-[18px] text-purple-800 ltr:mr-1 rtl:ml-1"></i>{' '}
@@ -63,7 +69,7 @@ export default function JobDetails({
               <div className="ltr:ml-4 rtl:mr-4 ">
                 <p className="font-medium">Employee Type:</p>
                 <span className="text-purple-800 font-medium text-sm">
-                  {employeeType}
+                  {job.employeeType}
                 </span>
               </div>
             </li>
@@ -88,7 +94,7 @@ export default function JobDetails({
               <div className="ltr:ml-4 rtl:mr-4">
                 <p className="font-medium">Location:</p>
                 <span className="text-purple-800 font-medium text-sm">
-                  {location}
+                  {job.location}
                 </span>
               </div>
             </li>
@@ -114,7 +120,7 @@ export default function JobDetails({
               <div className="ltr:ml-4 rtl:mr-4">
                 <p className="font-medium">Job Type:</p>
                 <span className="text-purple-800 font-medium text-sm">
-                  {jobName}
+                  {job.jobTitle}
                 </span>
               </div>
             </li>
@@ -139,7 +145,7 @@ export default function JobDetails({
               <div className="ltr:ml-4 rtl:mr-4">
                 <p className="font-medium">Salary:</p>
                 <span className="text-purple-800 font-medium text-sm">
-                  {salary}
+                  {job.salary}
                 </span>
               </div>
             </li>
@@ -164,88 +170,83 @@ export default function JobDetails({
               <div className="ltr:ml-4 rtl:mr-4">
                 <p className="font-medium">Date posted:</p>
                 <span className="text-purple-800 font-medium text-sm">
-                  {datePosted}
+                  {job.datePosted}
                 </span>
               </div>
             </li>
           </ul>
-
           <h5 className="text-lg font-semibold mt-6">Job Description:</h5>
-
-          <p className="text-slate-400 mt-4">{jobDescription1}</p>
-          <p className="text-slate-400 mt-4">{jobDescription2}</p>
-          <p className="text-slate-400 mt-4">{jobDescription3}</p>
+          {job.jobDescription.length > 0 && (
+            <div className="mt-4">
+              <div>
+                <p className="text-slate-400">
+                  {job.jobDescription[0].jobDes1}
+                </p>
+                <p className="text-slate-400">
+                  {job.jobDescription[0].jobDes2}
+                </p>
+                <p className="text-slate-400">
+                  {job.jobDescription[0].jobDes3}
+                </p>
+              </div>
+            </div>
+          )}
 
           <h5 className="text-lg font-semibold mt-6">
             Responsibilities and Duties:{' '}
           </h5>
-          <p className="text-slate-400 mt-4">{jobDuties1}</p>
-          <ul className="list-none">
-            <li className="text-slate-400 mt-2">
-              <i className="uil uil-arrow-right ltr:mr-1 rtl:ml-1"></i>
+          {job.jobDuties.length > 0 && (
+            <ul className="list-none">
+              <div>
+                <li className="text-slate-400 mt-2">
+                  <i className="uil uil-arrow-right ltr:mr-1 rtl:ml-1"></i>
+                  {job.jobDuties[0].jobDuties1}
+                </li>
 
-              {jobDuties2}
-            </li>
-            <li className="text-slate-400 mt-2">
-              <i className="uil uil-arrow-right  ltr:mr-1 rtl:ml-1"></i>
+                <li className="text-slate-400 mt-2">
+                  <i className="uil uil-arrow-right ltr:mr-1 rtl:ml-1"></i>
+                  {job.jobDuties[0].jobDuties2}
+                </li>
 
-              {jobDuties3}
-            </li>
-            <li className="text-slate-400 mt-2">
-              <i className="uil uil-arrow-right  ltr:mr-1 rtl:ml-1"></i>
-
-              {jobDuties4}
-            </li>
-            <li className="text-slate-400 mt-2">
-              <i className="uil uil-arrow-right ltr:mr-1 rtl:ml-1"></i>
-              Revise, update, refactor and debug code
-            </li>
-            <li className="text-slate-400 mt-2">
-              <i className="uil uil-arrow-right ltr:mr-1 rtl:ml-1"></i>
-              Improve existing software
-            </li>
-            <li className="text-slate-400 mt-2">
-              <i className="uil uil-arrow-right  ltr:mr-1 rtl:ml-1"></i>
-              Develop documentation throughout the software development life
-              cycle (SDLC)
-            </li>
-            <li className="text-slate-400 mt-2">
-              <i className="uil uil-arrow-right ltr:mr-1 rtl:ml-1"></i>
-              Serve as an expert on applications and provide technical support
-            </li>
-          </ul>
+                <li className="text-slate-400 mt-2">
+                  <i className="uil uil-arrow-right ltr:mr-1 rtl:ml-1"></i>
+                  {job.jobDuties[0].jobDuties3}
+                </li>
+                <li className="text-slate-400 mt-2">
+                  <i className="uil uil-arrow-right ltr:mr-1 rtl:ml-1"></i>
+                  {job.jobDuties[0].jobDuties4}
+                </li>
+              </div>
+            </ul>
+          )}
 
           <h5 className="text-lg font-semibold mt-6">
             Required Experience, Skills and Qualifications:{' '}
           </h5>
-          <p className="text-slate-400 mt-4">
-            It sometimes makes sense to select texts containing the various
-            letters and symbols specific to the output language.
-            {jobExp1}
-          </p>
-          <ul className="list-none">
-            <li className="text-slate-400 mt-2">
-              <i className="uil uil-arrow-right  ltr:mr-1 rtl:ml-1"></i>
+          {job.jobExperience.length > 0 && (
+            <ul className="list-none">
+              <li className="text-slate-400 mt-2">
+                <i className="uil uil-arrow-right  ltr:mr-1 rtl:ml-1"></i>
 
-              {jobExp2}
-            </li>
-            <li className="text-slate-400 mt-2">
-              <i className="uil uil-arrow-right ltr:mr-1 rtl:ml-1"></i>
+                {job.jobExperience[0].jobExp1}
+              </li>
+              <li className="text-slate-400 mt-2">
+                <i className="uil uil-arrow-right ltr:mr-1 rtl:ml-1"></i>
 
-              {jobExp3}
-            </li>
-            <li className="text-slate-400 mt-2">
-              <i className="uil uil-arrow-right  ltr:mr-1 rtl:ml-1"></i>
+                {job.jobExperience[0].jobExp2}
+              </li>
+              <li className="text-slate-400 mt-2">
+                <i className="uil uil-arrow-right  ltr:mr-1 rtl:ml-1"></i>
 
-              {jobExp4}
-            </li>
+                {job.jobExperience[0].jobExp3}
+              </li>
 
-            <li className="text-slate-400 mt-2">
-              <i className="uil uil-arrow-right ltr:mr-1 rtl:ml-1"></i>
-              Excellent problem solving and analytical skills
-            </li>
-          </ul>
-
+              <li className="text-slate-400 mt-2">
+                <i className="uil uil-arrow-right ltr:mr-1 rtl:ml-1"></i>
+                {job.jobExperience[0].jobExp4}
+              </li>
+            </ul>
+          )}
           <div className="mt-5">
             <a
               href="job-apply.html"
