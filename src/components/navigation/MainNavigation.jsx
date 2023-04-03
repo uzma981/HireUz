@@ -9,7 +9,7 @@ import Careers from '../CareersScreen/Careers';
 import Login from '../Login';
 import SignUp from '../SignUp';
 import Navbar2 from './NavBar2';
-
+import JobDetails from '../JobsScreen/JobDetails';
 import Profile from '../ProfileScreen/Profile';
 function MainNavigation() {
   return (
@@ -26,6 +26,7 @@ function MainNavigation() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/userProfile" element={<Profile />}></Route>
+        <Route path="/userProfile/jobDetails/:jobId" element={<JobDetails />} />
         {/* <Route path="/userProfile" element={<Profile />}>
           <Route path="/userProfile/Jobs" element={<Jobs />}></Route>
         </Route> */}
