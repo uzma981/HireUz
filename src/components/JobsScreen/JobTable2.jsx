@@ -1,39 +1,40 @@
 import React from 'react';
+import { Link, useNavigate } from 'react-router-dom';
+import JobDetails from './JobDetails';
+export default function JobTable2({ job }) {
+  const navigate = useNavigate();
 
-export default function JobTable2({
-  jobName,
-  employeeType,
-  datePosted,
-  salary,
-  location,
-}) {
+  const handleJobClick = () => {
+    navigate(`/userProfile/jobDetails/${job._id}`);
+  };
   return (
     <div className="mb-5 group relative overflow-hidden md:flex justify-between items-center rounded shadow hover:shadow-md dark:shadow-gray-700 transition-all duration-500 p-5 md:mb-0">
-      <div className="flex items-center">
-        <a
-          href="job-detail-two.html"
+      <div className="flex items-center" key={job._id}>
+        <Link
+          to={`/userProfile/jobDetails/${job._id}`}
+          onClick={handleJobClick}
           className="text-lg hover:text-purple-600 font-semibold transition-all duration-500 ltr:ml-3 rtl:mr-3 min-w-[180px]"
         >
-          {jobName}
-        </a>
+          {job.jobTitle}
+        </Link>
       </div>
 
       <div className=" flex justify-between md:mt-0 mt-4">
         <span className="block">
           <span className="bg-emerald-600/10 inline-block text-purple-800 text-xs px-2.5 py-0.5 mr-5 font-semibold rounded-full">
-            {employeeType}
+            {job.employeeType}
           </span>
         </span>
         <span className="block text-slate-400 text-sm md:mt-1 mt-0">
-          <i className="uil uil-clock"></i> {datePosted}
+          <i className="uil uil-clock"></i> {job.datePosted}
         </span>
       </div>
 
       <div className="md:block flex justify-between md:mt-0 mt-2">
         <span className="text-slate-400">
-          <i className="uil uil-map-marker"></i> {location}
+          <i className="uil uil-map-marker"></i> {job.location}
         </span>
-        <span className="block font-semibold md:mt-1 mt-0">{salary}</span>
+        <span className="block font-semibold md:mt-1 mt-0">{job.salary}</span>
       </div>
 
       <div className="md:mt-0 mt-4">

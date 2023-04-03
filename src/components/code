@@ -1,0 +1,46 @@
+// <!-- <Link
+//           to="/userProfile/jobDetails"
+//           onClick={handleJobClick}
+//           className="text-lg hover:text-purple-600 font-semibold transition-all duration-500 ltr:ml-3 rtl:mr-3 min-w-[180px]"
+//         >
+//           {job.jobTitle}
+//         </Link>
+//         import { Link, useNavigate } from 'react-router-dom';
+// export default function JobTable2({ job }) {
+//   const navigate = useNavigate();
+//   const handleJobClick = () => {
+//     navigate('/userProfile/jobDetails', { state: { job } });
+//     console.log('done');
+//   }; -->
+
+//       {/* <JobTable/> */}
+//       {/* <JobDetails
+//         jobName={'Back-end developer'}
+//         employeeType={'Full Time'}
+//         location={' Ao.com Manchester, UK'}
+//         salary={'£4000 - £45000'}
+//         datePosted={' 28th March, 2023'}
+//         jobDescription1={
+//           ' One disadvantage of Lorum Ipsum is that in Latin certain letters appear more frequently than others - which creates a distinct visual impression. Moreover, in Latin only words at the beginning of sentences are capitalized.'
+//         }
+//         jobDescription2={
+//           'This means that Lorem Ipsum cannot accurately represent, forexample, German, in which all nouns are capitalized. Thus, Lorem Ipsum has only limited suitability as a visual filler for German texts. If the fill text is intended to illustrate the characteristics of different typefaces.'
+//         }
+//         jobDescription3={
+//           'It sometimes makes sense to select texts containing the various letters and symbols specific to the output language.'
+//         }
+//         jobDuties1={
+//           '  It sometimes makes sense to select texts containing the various letters and symbols specific to the output language.'
+//         }
+//         jobDuties2={'  Participate in requirements analysis'}
+//         jobDuties3={'Write clean, scalable code using C# and .NET frameworks'}
+//         jobDuties4={'Test and deploy applications and systems'}
+//         jobExp1={'  Improve existing software'}
+//         jobExp2={
+//           'Serve as an expert on applications and provide technical support'
+//         }
+//         jobExp3={
+//           'Experience designing, developing and creating RESTful web services and APIs'
+//         }
+//         jobExp4={'Basic know how of Agile process and practices'}
+//       /> */}
