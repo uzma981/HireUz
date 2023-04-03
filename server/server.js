@@ -35,6 +35,19 @@ app.get('/jobs', async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 });
+app.get('/jobs/:id', async (req, res) => {
+  const jobId = req.params.id;
+  try {
+    const job = await Job.findById(jobId);
+    if (!job) {
+      return res.status(404).json({ message: 'Job not found' });
+    }
+
+    res.status(200).json(job);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
 app.post('/submit', async (req, res) => {
   const { name, email, phone, message } = req.body;
   try {
