@@ -1,6 +1,5 @@
 import React from 'react';
 import { AiOutlineCloseCircle, AiOutlineSearch } from 'react-icons/ai';
-import JobCard from '../JobCard';
 export default function Search() {
   return (
     <div className="">

@@ -1,11 +1,10 @@
 import React from 'react';
-import Search from '../Search';
-import JobTable from '../JobsScreen/JobTableNIU';
-import JobDetails from '../JobsScreen/JobDetails';
-import JobTable2 from '../JobsScreen/JobTable2';
+import Search from './Search';
+import JobTable from '../JobsScreen/JobTable';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
 import Logout from './Logout';
+
 export default function Profile() {
   const [jobs, setJobs] = useState(null);
 
@@ -34,7 +33,7 @@ export default function Profile() {
         {jobs &&
           jobs.map((job) => (
             <div key={job._id}>
-              <JobTable2 job={job} />
+              <JobTable job={job} />
             </div>
           ))}
       </ul>

@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import JobDetails from './JobDetails';
 export default function JobTable2({ job }) {
   const navigate = useNavigate();
 
