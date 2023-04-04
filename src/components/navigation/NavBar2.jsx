@@ -1,8 +1,34 @@
-import React, { useState } from "react";
-import { Transition } from "@headlessui/react";
-import { Link } from "react-router-dom";
+import React, { useState, useEffect } from 'react';
+import { Transition } from '@headlessui/react';
+import { Link, useNavigate } from 'react-router-dom';
+import { signOut } from 'firebase/auth';
+import { auth } from '../../inc/firebase';
+
 export default function NavBar2() {
   const [isOpen, setIsOpen] = useState(false);
+  const [loggedIn, setLoggedIn] = useState(false);
+  const navigate = useNavigate();
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setLoggedIn(true);
+      } else {
+        setLoggedIn(false);
+      }
+    });
+    return unsubscribe;
+  }, []);
+  const handleLogout = (e) => {
+    e.preventDefault();
+    signOut(auth)
+      .then(() => {
+        console.log('User has signed out');
+        navigate('/login');
+      })
+      .catch((error) => {
+        console.error('Error signing out:', error);
+      });
+  };
   return (
     <div className="navbar  bg-black">
       <div className="navbar-start">
@@ -49,14 +75,11 @@ export default function NavBar2() {
               </Link>
             </li>
             <li>
-              <Link to="/login" className="text-gray-500">
-                Login
-              </Link>
-            </li>
-            <li>
-              <Link to="/signup" className="text-gray-500">
-                Sign Up
-              </Link>
+              {loggedIn ? (
+                <Link to="/userProfile" className="text-purple-500">
+                  Dashboard
+                </Link>
+              ) : null}
             </li>
           </ul>
         </div>
@@ -89,21 +112,31 @@ export default function NavBar2() {
             </Link>
           </li>
           <li>
-            <Link to="/login" className="text-gray-300">
-              Login
-            </Link>
-          </li>
-          <li>
-            <Link to="/signup" className="text-gray-300">
-              Sign Up
-            </Link>
+            {loggedIn ? (
+              <Link to="/userProfile" className="text-gray-300">
+                Dashboard
+              </Link>
+            ) : null}
           </li>
         </ul>
       </div>
       <div className="navbar-end">
-        <a className="btn bg-purple-500 hover:bg-purple-900 font-medium mr-3">
-          Drop your CV
-        </a>
+        {loggedIn ? (
+          <a
+            href="/"
+            onClick={handleLogout}
+            className="btn bg-gray-500 hover:bg-gray-800 px-5 font-medium mr-3"
+          >
+            Logout
+          </a>
+        ) : (
+          <Link
+            to="/login"
+            className="btn bg-purple-500 hover:bg-purple-900 px-5 font-medium mr-3"
+          >
+            Login
+          </Link>
+        )}
       </div>
     </div>
   );
