@@ -5,6 +5,7 @@ import JobDetails from '../JobsScreen/JobDetails';
 import JobTable2 from '../JobsScreen/JobTable2';
 import axios from 'axios';
 import { useState, useEffect } from 'react';
+import Logout from './Logout';
 export default function Profile() {
   const [jobs, setJobs] = useState(null);
 
@@ -25,6 +26,9 @@ export default function Profile() {
   }, []);
   return (
     <div>
+      <div className="">
+        <Logout />
+      </div>
       <Search></Search>
       <ul>
         {jobs &&
