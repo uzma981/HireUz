@@ -3,7 +3,7 @@ import Home from '../HomeScreen/Home';
 import About from '../AboutUsScreen/About';
 import Candidates from '../CandidatesScreen/Candidates';
 import Clients from '../ClientsScreen/Clients';
-
+import ApplyNow from '../JobsScreen/ApplyScreen/ApplyNow';
 import Blogs from '../BlogsScreen/Blogs';
 
 import Login from '../Login';
@@ -20,13 +20,13 @@ function MainNavigation() {
         <Route path="/about" element={<About />}></Route>
         <Route path="/candidates" element={<Candidates />}></Route>
         <Route path="/clients" element={<Clients />}></Route>
-
         <Route path="/blogs" element={<Blogs />}></Route>
-
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/userProfile" element={<Profile />}></Route>
-        <Route path="/userProfile/jobDetails/:jobId" element={<JobDetails />} />
+        <Route path="/userProfile/:jobId" element={<JobDetails />} />
+        <Route path="/userProfile/:jobId/job-apply" element={<ApplyNow />} />
+
         {/* <Route path="/userProfile" element={<Profile />}>
           <Route path="/userProfile/Jobs" element={<Jobs />}></Route>
         </Route> */}

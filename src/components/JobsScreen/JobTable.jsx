@@ -4,13 +4,13 @@ export default function JobTable2({ job }) {
   const navigate = useNavigate();
 
   const handleJobClick = () => {
-    navigate(`/userProfile/jobDetails/${job._id}`);
+    navigate(`/userProfile/${job._id}`);
   };
   return (
     <div className="mb-5 group relative overflow-hidden md:flex justify-between items-center rounded shadow hover:shadow-md dark:shadow-gray-700 transition-all duration-500 p-5 md:mb-0">
       <div className="flex items-center" key={job._id}>
         <Link
-          to={`/userProfile/jobDetails/${job._id}`}
+          to={`/userProfile/${job._id}`}
           onClick={handleJobClick}
           className="text-lg hover:text-purple-600 font-semibold transition-all duration-500 ltr:ml-3 rtl:mr-3 min-w-[180px]"
         >
@@ -56,12 +56,12 @@ export default function JobTable2({ job }) {
             <path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path>
           </svg>
         </a>
-        <a
-          href="job-apply.html"
+        <Link
+          to={`/userProfile/${job._id}/job-apply`}
           className="btn rounded-md bg-purple-500 hover:bg-purple-700 border-purple-800 hover:border-purple-800 text-white ltr:md:ml-2 rtl:md:mr-2 w-full md:w-auto"
         >
           Apply Now
-        </a>
+        </Link>
       </div>
 
       <span className="w-24 bg-yellow-400 text-white text-center absolute ltr:-rotate-45 rtl:rotate-45 ltr:-left-[30px] rtl:-right-[30px] top-1">
