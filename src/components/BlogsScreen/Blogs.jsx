@@ -15,7 +15,7 @@ export default function Blogs() {
           </p>
         </div>
       </section>
-      <form className="">
+      {/* <form className="">
         <label
           htmlFor="default-search"
           className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -54,7 +54,7 @@ export default function Blogs() {
             Search
           </button>
         </div>
-      </form>
+      </form> */}
       <BlogSection />
       <div className="text-center bg-gray-300 py-20">
         <div className="py-10 bg-white mr-5 ml-5 mb-5 lg:w-1/2">
