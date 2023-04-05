@@ -23,6 +23,24 @@ export default function BlogSection() {
                 "In today's fast-paced digital age, there are endless opportunities in the tech industry. From software development to cybersecurity and beyond, there is a role for everyone. But with so many options available, it can be overwhelming to know where to start. "
               }
             />
+            <SingleBlog
+              categoryName={'HIRING'}
+              date={'12 MAY 2022'}
+              blogTitle={'HOW TO CREATE A GENDER INCLUSIVE WORKPLACE'}
+              blogDescription={
+                'How to build a workplace where everyone feels safe and inspired whatever their gender, from hiring, benefits and promotion through to inclusive pronouns and allyship. '
+              }
+            />
+            <SingleBlog
+              categoryName={'CAREERS'}
+              date={'12 MAY 2022'}
+              blogTitle={
+                'WHY EMBRACING DIFFERENT OPINIONS IN YOUR TEAM IS IMPORTANT'
+              }
+              blogDescription={
+                'Learn more about why different opinions are important and how embracing diverse team opinions can be beneficial. '
+              }
+            />
           </div>
         </div>
       </section>
