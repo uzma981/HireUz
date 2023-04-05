@@ -4,7 +4,7 @@ import SignUpForm from '../inc/SignUpForm';
 export default function SignUp() {
   return (
     <div className="flex w-full ">
-      <div className="w-full flex items-center justify-center lg:w-1/2 ">
+      <div className="w-full flex items-center justify-center lg:w-1/2 mt-20">
         <SignUpForm />
       </div>
       <div className="h-screen hidden relative lg:flex w-1/2 items-center justify-center bg-gray-100">

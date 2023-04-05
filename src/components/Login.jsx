@@ -4,7 +4,7 @@ import LoginForm from '../inc/LoginForm';
 export default function Login() {
   return (
     <div className="flex w-full ">
-      <div className="w-full flex items-center justify-center lg:w-1/2 ">
+      <div className="w-full flex items-center justify-center lg:w-1/2 mt-20 ">
         <LoginForm />
       </div>
       <div className="h-screen hidden relative lg:flex w-1/2 items-center justify-center bg-gray-100">
