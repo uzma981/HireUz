@@ -1,10 +1,20 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FormDescription from '../FormDescription';
+import { useParams } from 'react-router-dom';
 
 function ApplyNow() {
+  const [firstName, setfirstName] = useState('');
+  const [lastName, setlastName] = useState('');
+  const [email, setEmail] = useState('');
+  const [num, setNum] = useState('');
+  const [questionOne, setquestionOne] = useState('');
+  const [questionTwo, setquestionTwo] = useState('');
+  const [cv, setCV] = useState(null);
+  const [coverLetter, setcoverLetter] = useState(null);
+  const { jobId } = useParams();
+
   return (
     <div>
-      {' '}
       <section className="flex bg-white py-4 mt-5 items-center justify-center">
         <div className="">
           <h2 className=" font-bold text-4xl md:text-5xl ">Application Form</h2>
@@ -130,26 +140,26 @@ function ApplyNow() {
                 </div>
               </div>
             </div>
-            <section class="text-gray-700 body-font relative md:items-start">
-              <div class="container mx-auto flex sm:flex-nowrap flex-wrap">
-                <div class=" bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
-                  <div class="relative mb-4">
+            <section className="text-gray-700 body-font relative md:items-start">
+              <div className="container mx-auto flex sm:flex-nowrap flex-wrap">
+                <div className=" bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
+                  <div className="relative mb-4">
                     <label
                       htmlFor="message"
-                      class="leading-7 text-sm text-gray-600"
+                      className="leading-7 text-sm text-gray-600"
                     >
                       Tell me about yourself (Max 500 words)
                     </label>
                     <textarea
                       id="message"
                       name="message"
-                      class="w-full bg-white rounded border border-gray-400 focus:border-purple-700 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                      className="w-full bg-white rounded border border-gray-400 focus:border-purple-700 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                     ></textarea>
                   </div>
-                  <div class="relative mb-4">
+                  <div className="relative mb-4">
                     <label
                       htmlFor="message"
-                      class="leading-7 text-sm text-gray-600"
+                      className="leading-7 text-sm text-gray-600"
                     >
                       What motivates you to apply to this job role? (Max 200
                       words)
@@ -157,7 +167,7 @@ function ApplyNow() {
                     <textarea
                       id="message"
                       name="message"
-                      class="w-full bg-white rounded border border-gray-400 focus:border-purple-700 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
+                      className="w-full bg-white rounded border border-gray-400 focus:border-purple-700 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                     ></textarea>
                   </div>
                 </div>
