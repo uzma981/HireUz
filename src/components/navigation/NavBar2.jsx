@@ -70,8 +70,8 @@ export default function NavBar2() {
               </Link>
             </li>
             <li>
-              <Link to="/careers" className="text-gray-500">
-                Careers
+              <Link to="/blogs" className="text-gray-500">
+                Blogs
               </Link>
             </li>
             <li>
@@ -107,8 +107,8 @@ export default function NavBar2() {
             </Link>
           </li>
           <li>
-            <Link to="/careers" className="text-gray-300">
-              Careers
+            <Link to="/blogs" className="text-gray-300">
+              Blogs
             </Link>
           </li>
           <li>

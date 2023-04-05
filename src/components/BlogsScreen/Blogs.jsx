@@ -1,9 +1,21 @@
 import React from 'react';
-
-export default function Careers() {
+import BlogSection from './BlogSection';
+import Footer from '../Footer';
+export default function Blogs() {
   return (
     <div>
-      <form>
+      <section className="bg-white py-5 mt-5 mb-5">
+        <div className="mr-3 ml-3">
+          <h2 className="mb-5 font-bold text-5xl ">BLOGS PAGE</h2>
+          <p className="justify-center items-center">
+            If you're looking for a way to break into the tech industry but
+            don't know where to start, then look no further than this blog post!
+            We'll provide you with some valuable insights and tips to help you
+            launch your tech career and get a head start in the industry.
+          </p>
+        </div>
+      </section>
+      <form className="">
         <label
           htmlFor="default-search"
           className="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white"
@@ -32,7 +44,7 @@ export default function Careers() {
             type="search"
             id="default-search"
             className="block w-full p-4 pl-10 text-sm text-gray-900 border border-gray-300 rounded-lg bg-gray-50 focus:ring-purple-300 focus:border-gray-500 "
-            placeholder="Search Careers.."
+            placeholder="Search Blogs..."
             required
           />
           <button
@@ -43,6 +55,7 @@ export default function Careers() {
           </button>
         </div>
       </form>
+      <BlogSection />
       <div className="text-center bg-gray-300 py-20">
         <div className="py-10 bg-white mr-5 ml-5 mb-5 lg:w-1/2">
           <h1>Our roles</h1>
@@ -57,6 +70,7 @@ export default function Careers() {
           <h1>CV Builder </h1>
         </div>
       </div>
+      <Footer />
     </div>
   );
 }

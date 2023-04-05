@@ -4,7 +4,7 @@ import About from '../AboutUsScreen/About';
 import Candidates from '../CandidatesScreen/Candidates';
 import Clients from '../ClientsScreen/Clients';
 
-import Careers from '../CareersScreen/Careers';
+import Blogs from '../BlogsScreen/Blogs';
 
 import Login from '../Login';
 import SignUp from '../SignUp';
@@ -21,7 +21,7 @@ function MainNavigation() {
         <Route path="/candidates" element={<Candidates />}></Route>
         <Route path="/clients" element={<Clients />}></Route>
 
-        <Route path="/careers" element={<Careers />}></Route>
+        <Route path="/blogs" element={<Blogs />}></Route>
 
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
