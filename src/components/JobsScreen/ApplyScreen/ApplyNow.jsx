@@ -14,7 +14,6 @@ function ApplyNow() {
   const { jobId } = useParams();
 
   const handleSubmit = async (e) => {
-    console.log(firstName);
     e.preventDefault();
     const candidate = { firstName, lastName, email, phoneNum };
     const applicationQs = { questionOne, questionTwo };
@@ -33,6 +32,14 @@ function ApplyNow() {
     });
     if (response.status === 201) {
       console.log('candidate sucessfully added');
+      const formContainer = document.querySelector('#form-container');
+      formContainer.innerHTML = `
+  <div class="text-2xl font-semibold mb-5 text-gray-400">Thank you for applying. We have received your application and will be in touch soon!</div>
+`;
+      const h2container = document.querySelector('#h2-container');
+      h2container.innerHTML = `
+  <div class="ml-5 uppercase text-3xl font-semibold mb-5 text-black md:ml-0">Application received</div>
+`;
     }
     const data = await response.json();
     console.log(data);
@@ -42,11 +49,13 @@ function ApplyNow() {
     <div>
       <section className="flex bg-white py-4 mt-5 items-center justify-center">
         <div className="">
-          <h2 className=" font-bold text-4xl md:text-5xl ">Application Form</h2>
+          <h2 id="h2-container" className=" font-bold text-4xl md:text-5xl ">
+            Application Form
+          </h2>
         </div>
       </section>
       <div className="flex items-center justify-center">
-        <form onSubmit={handleSubmit}>
+        <form onSubmit={handleSubmit} id="form-container">
           <div className="xl:w-10/12 w-full px-8">
             <div className="xl:px-24">
               <div className="px-5 py-4 bg-gray-200 rounded-lg flex items-center justify-between mt-7">
