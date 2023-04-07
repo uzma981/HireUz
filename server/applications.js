@@ -30,18 +30,15 @@ const applicationSchema = new mongoose.Schema({
     {
       questionOne: {
         type: String,
-        required: true,
       },
       questionTwo: {
         type: String,
-        required: true,
       },
     },
   ],
   CV: {
     data: Buffer,
     contentType: String,
-    required: true,
   },
   coverLetter: {
     data: Buffer,
