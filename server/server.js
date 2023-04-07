@@ -4,6 +4,7 @@ const mongoose = require('mongoose');
 const User = require('./clientuser');
 const Job = require('./jobs');
 const app = express();
+const Apply = require('./applications');
 
 // Set up middleware
 app.use(bodyParser.json());
@@ -81,6 +82,22 @@ app.post('/jobs', async (req, res) => {
       jobExperience,
     });
     res.status(201).json(job);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
+app.post('/applications', async (req, res) => {
+  const { jobId, candidate, applicationQs, CV, coverLetter } = req.body;
+  try {
+    const applications = await Apply.create({
+      jobId,
+      candidate,
+      applicationQs,
+      CV,
+      coverLetter,
+    });
+    res.status(201).json(applications);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
