@@ -8,7 +8,41 @@ import UKGOV from '../../img/UKGOV.png';
 import UDEMY from '../../img/UDEMY.png';
 import img from '../../img/team2.jpg';
 import Footer from '../Footer';
+import {
+  ArrowPathIcon,
+ ComputerDesktopIcon,
+  AcademicCapIcon,
+  WrenchIcon,
+  UserIcon
+  
+} from '@heroicons/react/24/outline';
 export default function Candidates() {
+  const features = [
+    {
+      name: 'Mentorship and Career coaching',
+      description:
+        'We offer training and mentoring programs to help women in tech acquire new skills and knowledge, stay up-to-date with the latest industry trend, and advance their careers.',
+      icon: AcademicCapIcon,
+    },
+    {
+      name: 'Professional development resources and training',
+      description:
+        'We equip you with the necessary training and knowledge to succeed in the technology industry. ',
+      icon: WrenchIcon,
+    },
+    {
+      name: 'Work on innovative projects and cutting-edge technologies',
+      description:
+        'Quisque est vel vulputate cursus. Risus proin diam nunc commodo. Lobortis auctor congue commodo diam neque.',
+      icon: ComputerDesktopIcon,
+    },
+    {
+      name: 'Leadership and management roles within the industry',
+      description:
+        'Arcu egestas dolor vel iaculis in ipsum mauris. Tincidunt mattis aliquet hac quis. Id hac maecenas ac donec pharetra eget.',
+      icon: UserIcon,
+    },
+  ];
   return (
     <div>
       <section className="bg-white py-5 mt-5 mb-5">
@@ -81,44 +115,47 @@ export default function Candidates() {
           <h2 className="mb-5 font-bold text-4xl md:text-5xl">CAREER PATHS </h2>
           <p className="mx-auto mt-3 max-w-xl text-md"></p>
           <div className="mt-12 grid grid-auto-fit gap-4">
-            <div className="grid2-item py-8 px-8 bg-purple-200">
+            <div className="grid2-item py-8 px-8 border-2 border-black bg-gray-200">
               <h3 className="font-semibold mb-4">Software Developer</h3>
               <p>
                 This involves designing, developing, testing, and maintaining
                 software systems and applications.
               </p>
             </div>
-            <div className="grid2-item py-8 px-8 bg-purple-200">
+            <div
+              role="info"
+              className="grid2-item py-8 px-8 border-2 border-black bg-gray-200"
+            >
               <h3 className="font-semibold mb-4">Data analyst/scientist</h3>
               <p>
-                We focus on removing complexity and difficulties for both
-                clients and candidates and take it upon ourselves.
+                A data analyst is responsible for collecting, processing, and
+                performing statistical analyses on large datasets.
               </p>
             </div>
-            <div className="grid2-item py-8 px-8 bg-purple-200">
+            <div className="grid2-item py-8 px-8 border-2 border-black bg-gray-200">
               <h3 className="font-semibold mb-4">Project manager</h3>
               <p>
-                We are passionate about bridging the gender gap in the tech
-                industry and believe that hiring more women in tech is the key
-                to achieving this goal
+                Responsible for ensuring projects are completed on time, within
+                budget, and to a high standard of quality, while also managing
+                risks and communicating with stakeholders.
               </p>
             </div>
-            <div className="grid2-item py-8 px-8 bg-purple-200">
+            <div className="grid2-item py-8 px-8 border-2 border-black bg-gray-200">
               <h3 className="font-semibold mb-4">UX/UI designer</h3>
               <p>
-                We are passionate about bridging the gender gap in the tech
-                industry and believe that hiring more women in tech is the key
-                to achieving this goal
+                Responsible for creating intuitive and visually appealing
+                interfaces for digital products, with a focus on enhancing the
+                user experience.
               </p>
             </div>
-            <div className="grid2-item py-8 px-8 bg-purple-200">
+            <div className="grid2-item py-8 px-8 border-2 border-black bg-gray-200">
               <h3 className="font-semibold mb-4">Cybersecurity specialist</h3>
               <p>
                 This involves protecting computer systems and networks from
                 cyber threats and attacks.
               </p>
             </div>
-            <div className="grid2-item py-8 px-8 bg-purple-200">
+            <div className="grid2-item py-8 px-8 border-2 border-black bg-gray-200">
               <h3 className="font-semibold mb-4">
                 Artificial intelligence/machine learning engineer
               </h3>
@@ -128,14 +165,14 @@ export default function Candidates() {
                 and systems.
               </p>
             </div>
-            <div className="grid2-item py-8 px-8 bg-purple-200">
+            <div className="grid2-item py-8 px-8 border-2 border-black bg-gray-200">
               <h3 className="font-semibold mb-4">Cloud computing specialist</h3>
               <p>
                 This involves managing and maintaining cloud-based systems and
                 infrastructure.
               </p>
             </div>
-            <div className="grid2-item py-8 px-8 bg-purple-200">
+            <div className="grid2-item py-8 px-8 border-2 border-black bg-gray-200">
               <h3 className="font-semibold mb-4">Network administrator</h3>
               <p>
                 This involves managing and maintaining computer networks,
@@ -145,44 +182,43 @@ export default function Candidates() {
           </div>
         </div>
       </section>
-      <div className="justify-center py:4 lg:py-8 bg-purple-400 ">
-        <div className=" justify-center py-2 mt-9 m-10 grid-auto-fit md:m-5 lg:grid lg:grid-cols-2 lg:gap-4 lg:m-20">
-          <div className="justify-center text-center lg:py-4 lg:ml-8 lg:justify-end">
-            <h2 className="mt-4 text-center font-semibold text-2xl md:text-2xl xl:text-4xl lg:text-left">
-              Opportunities for career growth
-            </h2>
-            <div className="text-center justify-center">
-              <p className="py-4  justify-center lg:text-left text-gray-700 max-w-lg md:max-w-xl">
-                We understand that career growth is an essential component of
-                job satisfaction, and we are dedicated to investing the time,
-                effort, and resources necessary to provide opportunities for
-                professional advancement.
-              </p>
 
-              <p className="py-4  justify-center lg:text-left text-gray-700 max-w-lg md:max-w-xl ">
-                We work closely with our clients to identify roles that align
-                with your skill sets, interests, and long-term career goals. We
-                also offer training and mentoring programs to help women in tech
-                acquire new skills and knowledge, stay up-to-date with the
-                latest industry trends, and advance their careers.
-              </p>
-              <p className="py-4  justify-center lg:text-left text-gray-700 max-w-lg md:max-w-xl">
-                We believe that by investing in the career growth of women, we
-                not only support their personal and professional development but
-                also contribute to creating a more diverse and inclusive tech
-                industry.
-              </p>
-            </div>
+      <div className="bg-gray-100 py-24 sm:py-15">
+        <div className="mx-auto max-w-7xl px-6 lg:px-2">
+          <div className="mx-auto max-w-2xl lg:text-center">
+            <p className="mt-2 text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+              OPPORTUNITIES FOR CAREER GROWTH
+            </p>
+            <p className="mt-6 text-lg leading-8 text-gray-600">
+              We understand that career growth is an essential component of job
+              satisfaction, and we are dedicated to investing the time, effort,
+              and resources necessary to provide opportunities for professional
+              advancement.
+            </p>
           </div>
-          <div className="flex justify-center mr-5 md:justify-center ">
-            <img
-              className="max-w-s ml-5 object-contain md:h-auto md:max-w-md lg:max-w-full lg:mr-5 lg:ml-5  "
-              src={img}
-              alt="woman with computer"
-            ></img>
+          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-10 lg:max-w-none lg:grid-cols-2 lg:gap-y-16">
+              {features.map((feature) => (
+                <div key={feature.name} className="relative pl-16">
+                  <dt className="text-base font-semibold leading-7 text-gray-900">
+                    <div className="absolute left-0 top-0 flex h-10 w-10 items-center justify-center rounded-lg bg-purple-800">
+                      <feature.icon
+                        className="h-6 w-6 text-white"
+                        aria-hidden="true"
+                      />
+                    </div>
+                    {feature.name}
+                  </dt>
+                  <dd className="mt-2 text-base leading-7 text-gray-600">
+                    {feature.description}
+                  </dd>
+                </div>
+              ))}
+            </dl>
           </div>
         </div>
       </div>
+
       <Footer></Footer>
     </div>
   );
