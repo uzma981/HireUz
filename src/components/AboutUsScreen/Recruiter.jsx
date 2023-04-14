@@ -6,7 +6,7 @@ export default function Recruiter({ img, name, description }) {
       <img
         className="rounded-lg shadow-lg mb-6 mx-auto w-[200px]"
         src={img}
-        alt="avatar"
+        alt="image of team member"
         // style={{ width: '200px' }}
       />
 
