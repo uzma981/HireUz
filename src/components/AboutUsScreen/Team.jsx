@@ -1,9 +1,9 @@
 import React from 'react';
-import team1 from '../../img/team1.jpg';
+import team1 from '../../img/team1-min.jpg';
 import Recruiter from './Recruiter';
-import team3 from '../../img/team3.jpg';
-import team4 from '../../img/team4.jpg';
-import team6 from '../../img/team6.jpg';
+import team3 from '../../img/team3-min.jpg';
+import team4 from '../../img/team4-min.jpg';
+import team6 from '../../img/team6-min.jpg';
 
 export default function Team() {
   return (
