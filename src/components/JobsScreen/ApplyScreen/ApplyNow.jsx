@@ -48,15 +48,15 @@ function ApplyNow() {
   return (
     <div>
       <section className="flex bg-white py-4 mt-5 items-center justify-center">
-        <div className="">
+    
           <h2 id="h2-container" className=" font-bold text-4xl md:text-5xl ">
             Application Form
           </h2>
-        </div>
+      
       </section>
       <div className="flex items-center justify-center">
         <form onSubmit={handleSubmit} id="form-container">
-          <div className="xl:w-10/12 w-full px-8">
+          <div className="w-full px-8">
             <div className="xl:px-24">
               <div className="px-5 py-4 bg-gray-200 rounded-lg flex items-center justify-between mt-7">
                 <div className="flex items-center">
