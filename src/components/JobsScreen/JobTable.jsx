@@ -4,13 +4,13 @@ export default function JobTable2({ job }) {
   const navigate = useNavigate();
 
   const handleJobClick = () => {
-    navigate(`/userProfile/${job._id}`);
+    navigate(`/jobs/${job._id}`);
   };
   return (
     <div className="mb-5 group relative overflow-hidden md:flex justify-between items-center rounded shadow hover:shadow-md dark:shadow-gray-700 transition-all duration-500 p-5 md:mb-0">
       <div className="flex items-center" key={job._id}>
         <Link
-          to={`/userProfile/${job._id}`}
+          to={`/jobs/${job._id}`}
           onClick={handleJobClick}
           className="text-lg hover:text-purple-600 font-semibold transition-all duration-500 ltr:ml-3 rtl:mr-3 min-w-[180px]"
         >
@@ -57,7 +57,7 @@ export default function JobTable2({ job }) {
           </svg>
         </a>
         <Link
-          to={`/userProfile/${job._id}/job-apply`}
+          to={`/jobs/${job._id}/job-apply`}
           className="btn rounded-md bg-purple-500 hover:bg-purple-700 border-purple-800 hover:border-purple-800 text-white ltr:md:ml-2 rtl:md:mr-2 w-full md:w-auto"
         >
           Apply Now
