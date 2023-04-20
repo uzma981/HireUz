@@ -1,5 +1,5 @@
 import React from 'react';
-
+import { Link } from 'react-router-dom';
 export default function Footer() {
   return (
     <div>
@@ -12,9 +12,7 @@ export default function Footer() {
                 HIRE UZ
               </h6>
               <p className="">
-                Here you can use rows and columns to organize your footer
-                content. Lorem ipsum dolor sit amet, consectetur adipisicing
-                elit.
+                We are a recruitment agency based in Manchester and we aim to hire more women in technology roles
               </p>
             </div>
             <div className="">
@@ -47,24 +45,25 @@ export default function Footer() {
                 Useful links
               </h6>
               <p className="mb-4">
-                <a href="#!" className="text-neutral-300 ">
+             
+                <Link to="/candidates" className="text-neutral-300">
                   Candidates
-                </a>
+                </Link>
               </p>
               <p className="mb-4">
-                <a href="#!" className="text-neutral-300 ">
+                <Link to="/clients" className="text-neutral-300">
                   Clients
-                </a>
+                </Link>
               </p>
               <p className="mb-4">
-                <a href="#!" className="text-neutral-300 ">
+                <Link to="/login" className="text-neutral-300">
                   Login
-                </a>
+                </Link>
               </p>
               <p>
-                <a href="#!" className="text-neutral-300 ">
-                  About Us
-                </a>
+                <Link to="/about" className="text-neutral-300">
+                  About us
+                </Link>
               </p>
             </div>
             <div className="text-gray-300">
