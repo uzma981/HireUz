@@ -28,9 +28,7 @@ function MainNavigation() {
         <Route path="/jobs/:jobId" element={<JobDetails />} />
         <Route path="/jobs/:jobId/job-apply" element={<ApplyNow />} />
 
-        {/* <Route path="/userProfile" element={<Profile />}>
-          <Route path="/userProfile/Jobs" element={<Jobs />}></Route>
-        </Route> */}
+  
       </Routes>
     </Router>
   );

@@ -1,9 +1,4 @@
 import React from 'react';
-import {
-  AiFillTwitterCircle,
-  AiFillLinkedin,
-  AiFillFacebook,
-} from 'react-icons/ai';
 import Team from './Team';
 import ValuesCard from './ValuesCard';
 import Footer from '../Footer';
