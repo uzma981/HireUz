@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import FormDescription from '../FormDescription';
+import FormDescription from '../FormDescriptionNIU';
 import { useParams } from 'react-router-dom';
 
 function ApplyNow() {

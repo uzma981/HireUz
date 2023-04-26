@@ -7,7 +7,6 @@ export default function Recruiter({ img, name, description }) {
         className="rounded-lg shadow-lg mb-6 mx-auto w-[200px]"
         src={img}
         alt="image of team member"
-        // style={{ width: '200px' }}
       />
 
       <h5 className="uppercase text-lg font-bold mb-4 lg:text-2xl">{name}</h5>

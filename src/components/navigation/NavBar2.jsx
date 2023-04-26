@@ -5,9 +5,12 @@ import { signOut } from 'firebase/auth';
 import { auth } from '../../inc/firebase';
 
 export default function NavBar2() {
-  const [isOpen, setIsOpen] = useState(false);
   const [loggedIn, setLoggedIn] = useState(false);
   const navigate = useNavigate();
+
+  //sets up an authentication listener using Firebase auth.onAuthStateChanged(), which is called every time the user's authentication state changes.
+  // If the user is authenticated, it sets the loggedIn state to true,
+  // and if they are not authenticated, it sets it to false.
   useEffect(() => {
     const unsubscribe = auth.onAuthStateChanged((user) => {
       if (user) {
@@ -18,15 +21,19 @@ export default function NavBar2() {
     });
     return unsubscribe;
   }, []);
+
+  //Function is triggered when a user clicks on a logout button. 
+  //Uses the signOut method from Firebase's authentication API to sign the user out.
+ 
   const handleLogout = (e) => {
     e.preventDefault();
     signOut(auth)
       .then(() => {
         console.log('User has signed out');
-        navigate('/login');
+        navigate('/login'); //If the sign-out is successful, it logs a message to the console and navigates the user to the login page
       })
       .catch((error) => {
-        console.error('Error signing out:', error);
+        console.error('Error signing out:', error); // If there is an error during the sign-out process, it logs an error message to the console.
       });
   };
   return (
@@ -88,6 +95,7 @@ export default function NavBar2() {
           HireUz
         </Link>
       </div>
+
       <div className="navbar-center hidden lg:flex">
         <ul className="menu menu-horizontal px-1">
           <li>
@@ -121,6 +129,9 @@ export default function NavBar2() {
         </ul>
       </div>
       <div className="navbar-end">
+        {/* //if the user is logged in, a "Dashboard" link is also shown. On the
+        right side of the navbar, there is a "Logout" button if the user is
+        logged in, and a "Login" button if the user is not logged in.*/}
         {loggedIn ? (
           <a
             href="/"
@@ -128,7 +139,7 @@ export default function NavBar2() {
             className="btn bg-gray-500 hover:bg-gray-800 px-5 font-medium mr-3"
           >
             Logout
-          </a>
+          </a> //  The "Logout" button triggers the handleLogout function when clicked, which signs the user out and redirects to the login page. 
         ) : (
           <Link
             to="/login"
