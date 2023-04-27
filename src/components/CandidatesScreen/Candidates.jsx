@@ -72,6 +72,7 @@ export default function Candidates() {
         name={'Women In Tech'}
         info={'Click the button to explore the different free coding courses.'}
         img={womenintechImg}
+        alt={'women in tech image'}
         website="https://www.womenintech.co.uk/"
       ></CandidateInfo>
       <CandidateInfo
@@ -80,12 +81,14 @@ export default function Candidates() {
           'Click the button to visit the famous women in tech page to level up your knowledge'
         }
         img={freecodeImg}
+        alt={'free code camp image'}
         website="https://www.freecodecamp.org/"
       ></CandidateInfo>
       <CandidateInfo
         name={'Code Academy'}
         info={'Click the button to explore the different free coding courses.'}
         img={CodeAcad}
+        alt={'code academy image'}
         website="https://www.codecademy.com/"
       ></CandidateInfo>
       <CandidateInfo
@@ -94,12 +97,14 @@ export default function Candidates() {
           'Udemy is packed with free/cheap courses which can help you kickstart your career journey in tech'
         }
         img={UDEMY}
+        alt={'UDEMY image'}
         website="https://www.udemy.com/"
       ></CandidateInfo>
       <CandidateInfo
         name={'LinkedIn Learning'}
         info={'Click the button to explore LinkedIn courses'}
         img={LinkedIn}
+        alt={'LinkedIn image'}
         website="https://www.linkedin.com/learning/"
       ></CandidateInfo>
       <CandidateInfo
@@ -108,6 +113,7 @@ export default function Candidates() {
           'Click the button to explore the free courses funded by the government'
         }
         img={UKGOV}
+        alt={'UK GOV image'}
         website="https://www.gov.uk/guidance/find-a-skills-bootcamp"
       ></CandidateInfo>
       <section className="py-20 text-center">

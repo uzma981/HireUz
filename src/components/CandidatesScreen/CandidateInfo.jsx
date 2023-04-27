@@ -1,11 +1,11 @@
 import React from 'react';
 
-export default function CandidateInfo({ name, info, img, website }) {
+export default function CandidateInfo({ name, info, img, website, alt }) {
   return (
     <div className="m-5 md:m-10">
       <div className="card lg:card-side bg-base-100 shadow-xl ">
         <figure>
-          <img src={img} alt="img" />
+          <img src={img} alt={alt} />
         </figure>
         <div className="card-body">
           <h2 className=" uppercase card-title">{name}</h2>
