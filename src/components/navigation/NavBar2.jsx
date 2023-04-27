@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import { Transition } from '@headlessui/react';
 import { Link, useNavigate } from 'react-router-dom';
 import { signOut } from 'firebase/auth';
 import { auth } from '../../inc/firebase';
@@ -30,10 +29,12 @@ export default function NavBar2() {
     signOut(auth)
       .then(() => {
         console.log('User has signed out');
-        navigate('/login'); //If the sign-out is successful, it logs a message to the console and navigates the user to the login page
+        //If the sign-out is successful, it logs a message to the console and navigates the user to the login page
+        navigate('/login');
       })
       .catch((error) => {
-        console.error('Error signing out:', error); // If there is an error during the sign-out process, it logs an error message to the console.
+        // If there is an error during the sign-out process, it logs an error message to the console.
+        console.error('Error signing out:', error);
       });
   };
   return (

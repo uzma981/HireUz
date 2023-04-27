@@ -24,14 +24,13 @@ function MainNavigation() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/userProfile" element={<Profile />}></Route>
-        <Route path="/jobs" element={<Jobs />}></Route>
+        <Route path="/jobs" element={<Jobs />}></Route> 
+        {/* This allows the user to view a job details page and then apply to the
+        job using a separate page, which is linked by the job-apply path. */}
         <Route path="/jobs/:jobId" element={<JobDetails />} />
         <Route path="/jobs/:jobId/job-apply" element={<ApplyNow />} />
-
-  
       </Routes>
     </Router>
   );
 }
-
 export default MainNavigation;
