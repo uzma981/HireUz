@@ -9,9 +9,6 @@ export default function Introduction() {
           <h2 className="text-3xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-50">
             Our Mission
           </h2>
-          <p className="max-w-3xl mx-auto mt-4 text-xl text-center dark:text-gray-400">
-            Quando cetero his ne, eum admodum sapientem ut.
-          </p>
         </div>
         <div className="grid lg:gap-8 lg:grid-cols-2 lg:items-center">
           <div>

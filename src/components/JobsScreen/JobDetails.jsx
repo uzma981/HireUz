@@ -250,7 +250,7 @@ export default function JobDetails() {
           )}
           <div className="mt-5">
             <Link
-              to={`/userProfile/${jobId}/job-apply`}
+              to={`/jobs/${jobId}/job-apply`}
               className="btn rounded-md bg-purple-500 hover:bg-purple-700 border-purple-800 hover:border-purple-800 text-white ltr:md:ml-2 rtl:md:mr-2 w-full md:w-auto"
             >
               Apply Now
