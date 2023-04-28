@@ -11,6 +11,7 @@ import SignUp from '../SignUp';
 import Navbar2 from './NavBar2';
 import JobDetails from '../JobsScreen/JobDetails';
 import Profile from '../ProfileScreen/Profile';
+import SavedJobs from '../JobsScreen/SavedJobs';
 function MainNavigation() {
   return (
     <Router>
@@ -24,11 +25,12 @@ function MainNavigation() {
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
         <Route path="/userProfile" element={<Profile />}></Route>
-        <Route path="/jobs" element={<Jobs />}></Route> 
+        <Route path="/jobs" element={<Jobs />}></Route>
         {/* This allows the user to view a job details page and then apply to the
         job using a separate page, which is linked by the job-apply path. */}
         <Route path="/jobs/:jobId" element={<JobDetails />} />
         <Route path="/jobs/:jobId/job-apply" element={<ApplyNow />} />
+        <Route path="/savedJobs" element={<SavedJobs />} />
       </Routes>
     </Router>
   );

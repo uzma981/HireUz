@@ -5,6 +5,7 @@ const User = require('./clientuser');
 const Job = require('./jobs');
 const app = express();
 const Apply = require('./applications');
+const SaveJob = require('./saveJobs');
 
 // Set up middleware
 app.use(bodyParser.json());
@@ -28,9 +29,18 @@ app.get('/submit', async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 });
+
 app.get('/jobs', async (req, res) => {
   try {
     const jobs = await Job.find();
+    res.status(200).json(jobs);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+app.get('/saveJob', async (req, res) => {
+  try {
+    const jobs = await SaveJob.find();
     res.status(200).json(jobs);
   } catch (err) {
     res.status(400).json({ message: err.message });
@@ -49,11 +59,30 @@ app.get('/jobs/:id', async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 });
+
 app.post('/submit', async (req, res) => {
   const { name, email, phone, message } = req.body;
   try {
     const user = await User.create({ name, email, phone, message });
     res.status(201).json(user);
+  } catch (err) {
+    res.status(400).json({ message: err.message });
+  }
+});
+
+app.post('/saveJob', async (req, res) => {
+  const { jobID, jobTitle, datePosted, location, salary, employeeType } =
+    req.body;
+  try {
+    const savedJob = await SaveJob.create({
+      jobID,
+      jobTitle,
+      datePosted,
+      location,
+      salary,
+      employeeType,
+    });
+    res.status(201).json(savedJob);
   } catch (err) {
     res.status(400).json({ message: err.message });
   }
@@ -102,6 +131,38 @@ app.post('/applications', async (req, res) => {
     res.status(400).json({ message: err.message });
   }
 });
+app.post('saveJobs', async (req, res) => {
+ const { jobId, jobTitle, employeeType, datePosted, location, salary } =
+   req.body;
+  try {
+    const savedJobs = await SaveJob.create({
+      jobId,
+      jobTitle,
+      employeeType,
+      datePosted,
+      location,
+      salary,
+    });
+    
+    res.status(201).json(savedJobs);
+  } catch (err) {
+    res.status(404).json({ message: err.message });
+  }
+});
+
+app.post('les',async(req,res)=>{
+  const {hi,bye} = req.body;
+  try {
+    const sac = await Hi.create({
+      hi,
+      bye,
+    });
+    res.status(201).json(sac);
+  } catch (err) {
+    res.status(404).json({ message: err.message });
+  }
+});
+
 
 // Connect to MongoDB
 mongoose
