@@ -37,10 +37,6 @@ export default function JobDetails() {
                   <i className="uil uil-building text-[18px] text-purple-800 ltr:mr-1 rtl:ml-1"></i>{' '}
                   {job.location}
                 </span>
-                {/* <span className="text-slate-400 font-medium ltr:mr-2 rtl:ml-2 inline-block">
-                  <i className="uil uil-map-marker text-[18px] text-purple-800 ltr:mr-1 rtl:ml-1"></i>{' '}
-                  Manchester, UK
-                </span> */}
               </div>
             </div>
           </div>

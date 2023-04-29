@@ -8,7 +8,6 @@
     "build": "vite build",
     "preview": "vite preview",
     "test": "jest"
-
   },
   "dependencies": {
     "@headlessui/react": "^1.7.13",

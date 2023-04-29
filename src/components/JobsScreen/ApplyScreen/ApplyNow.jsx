@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import FormDescription from '../FormDescriptionNIU';
 import { useParams } from 'react-router-dom';
 
 function ApplyNow() {
@@ -17,6 +16,8 @@ function ApplyNow() {
     e.preventDefault();
     const candidate = { firstName, lastName, email, phoneNum };
     const applicationQs = { questionOne, questionTwo };
+    const CVupload = { CV };
+    const CoverLetterUpload = { coverLetter };
     const response = await fetch('http://localhost:3000/applications', {
       method: 'POST',
       headers: {
@@ -26,23 +27,31 @@ function ApplyNow() {
         jobId,
         candidate,
         applicationQs,
-        CV,
-        coverLetter,
+        CVupload,
+        CoverLetterUpload,
       }),
     });
     if (response.status === 201) {
       console.log('candidate sucessfully added');
       const formContainer = document.querySelector('#form-container');
       formContainer.innerHTML = `
-  <div class="text-2xl font-semibold mb-5 text-gray-400">Thank you for applying. We have received your application and will be in touch soon!</div>
+  <div class="text-2xl font-semibold mb-5 text-gray-500">Thank you for applying. We have received your application and will be in touch soon!</div>
 `;
       const h2container = document.querySelector('#h2-container');
       h2container.innerHTML = `
   <div class="ml-5 uppercase text-3xl font-semibold mb-5 text-black md:ml-0">Application received</div>
 `;
     }
+    const buttonContainer = document.querySelector('#button-container');
+    buttonContainer.innerHTML = `
+  <button class="p-5 bg-purple-400">Go back to dashboard</button>
+`;
     const data = await response.json();
     console.log(data);
+    const errorContainer = document.querySelector('#error-container');
+    errorContainer.innerHTML = `
+  <div class="text-xl font-semibold  text-red-500">Please complete the required fields in asterisks '*'</div>
+`;
   };
 
   return (
@@ -51,6 +60,7 @@ function ApplyNow() {
         <h2 id="h2-container" className=" font-bold text-4xl md:text-5xl ">
           Application Form
         </h2>
+        <button id="button-container"></button>
       </section>
       <div className="flex items-center justify-center">
         <form onSubmit={handleSubmit} id="form-container">
@@ -114,13 +124,15 @@ function ApplyNow() {
                         className="text-sm leading-none text-gray-800"
                         id="firstName"
                       >
-                        First name
+                        First name*
                       </label>
                       <input
                         type="name"
                         tabIndex="0"
                         onChange={(e) => setfirstName(e.target.value)}
-                        className="w-full p-3 mt-3 bg-gray-50 border rounded border-gray-200 focus:outline-none focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
+                        className="w-full p-3 mt-3 bg-gray-50 border 
+                        rounded border-gray-200 focus:outline-none
+                         focus:border-gray-600 text-sm font-medium leading-none text-gray-800"
                         aria-labelledby="firstName"
                         placeholder="First Name"
                       />
@@ -130,7 +142,7 @@ function ApplyNow() {
                         className="text-sm leading-none text-gray-800"
                         id="lastName"
                       >
-                        Last name
+                        Last name*
                       </label>
                       <input
                         type="name"
@@ -148,7 +160,7 @@ function ApplyNow() {
                         className="text-sm leading-none text-gray-800"
                         id="emailAddress"
                       >
-                        Email address
+                        Email address*
                       </label>
                       <input
                         type="email"
@@ -164,7 +176,7 @@ function ApplyNow() {
                         className="text-sm leading-none text-gray-800"
                         id="phone"
                       >
-                        Phone number
+                        Phone number*
                       </label>
                       <input
                         type="name"
@@ -178,7 +190,7 @@ function ApplyNow() {
                   </div>
                 </div>
               </div>
-
+              <div id="error-container"></div>
               <section className="text-gray-700 body-font relative md:items-start">
                 <div className="container mx-auto flex sm:flex-nowrap flex-wrap">
                   <div className=" bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
@@ -227,7 +239,15 @@ function ApplyNow() {
                   className="relative m-0 block w-full min-w-0 flex-auto rounded border border-solid border-neutral-300 bg-clip-padding py-[0.32rem] px-3 text-base font-normal text-neutral-700 transition duration-300 ease-in-out file:-mx-3 file:-my-[0.32rem] file:overflow-hidden file:rounded-none file:border-0 file:border-solid file:border-inherit file:bg-neutral-100 file:px-3 file:py-[0.32rem] file:text-neutral-700 file:transition file:duration-150 file:ease-in-out file:[margin-inline-end:0.75rem] file:[border-inline-end-width:1px] hover:file:bg-neutral-200 focus:border-primary focus:text-neutral-700 focus:shadow-[0_0_0_1px] focus:shadow-primary focus:outline-none dark:border-neutral-600 dark:text-neutral-200 dark:file:bg-neutral-700 dark:file:text-neutral-100"
                   type="file"
                   id="formFile"
-                  onChange={(e) => setCV(e.target.value)}
+                  // onChange={(e) => setCV(e.target.value)}
+                  onChange={(e) => {
+                    const file = e.target.files[0];
+                    const reader = new FileReader();
+                    reader.onload = () => {
+                      setCV(reader.result);
+                    };
+                    reader.readAsDataURL(file);
+                  }}
                 />
               </div>
               <div className="mb-3 w-full md:ml-5 md:w-96">

@@ -22,8 +22,18 @@ export default function Clients() {
   <div class="text-3xl font-semibold mb-5 text-white">Thank you for registering! We are looking forward to working with you soon.</div>
 `;
     }
+    else if (response.status === 400){
+       const errorContainer = document.querySelector('#error-message');
+      errorContainer.innerHTML = `
+ <div id = "error-message" class="text-red-500"> Missing fields. Please try again!
+               </div>
+`;
+    }
     const data = await response.json();
     console.log(data);
+    
+    
+      
   };
   return (
     <div className="">
@@ -137,6 +147,8 @@ export default function Clients() {
                     value={message}
                     title="message"
                   ></textarea>
+                </div>
+                <div id = "error-message">
                 </div>
                 <button
                   className="text-white mt-5 ml-5 items-center border-4 px-10 md:px-20 md:ml-0 "
