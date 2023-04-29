@@ -150,19 +150,6 @@ app.post('saveJobs', async (req, res) => {
   }
 });
 
-app.post('les',async(req,res)=>{
-  const {hi,bye} = req.body;
-  try {
-    const sac = await Hi.create({
-      hi,
-      bye,
-    });
-    res.status(201).json(sac);
-  } catch (err) {
-    res.status(404).json({ message: err.message });
-  }
-});
-
 
 // Connect to MongoDB
 mongoose
