@@ -22,7 +22,7 @@ export default function LoginForm() {
       });
   };
   return (
-    <div className="bg-white border-2 border-gray-200 px-10 py-10  rounded-3xl">
+    <div className="bg-white md:border-2 md:border-gray-400 px-10 py-10  rounded-3xl">
       <h1 className="text-5xl font-semibold text-center">Login</h1>
       <p className="text-center font-medium text-lg text-gray-500 mt-4">
         Please enter your details.
@@ -78,7 +78,7 @@ export default function LoginForm() {
           </button> */}
             <Link
               to="/signup"
-              className="text-violet-500 text-medium text-base ml-2"
+              className="text-violet-800 text-medium text-base ml-2"
             >
               Sign Up
             </Link>
