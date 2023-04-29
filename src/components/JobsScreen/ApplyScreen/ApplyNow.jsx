@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { useParams } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 function ApplyNow() {
   const [firstName, setfirstName] = useState('');
@@ -41,17 +42,24 @@ function ApplyNow() {
       h2container.innerHTML = `
   <div class="ml-5 uppercase text-3xl font-semibold mb-5 text-black md:ml-0">Application received</div>
 `;
-    }
-    const buttonContainer = document.querySelector('#button-container');
-    buttonContainer.innerHTML = `
-  <button class="p-5 bg-purple-400">Go back to dashboard</button>
-`;
-    const data = await response.json();
-    console.log(data);
-    const errorContainer = document.querySelector('#error-container');
-    errorContainer.innerHTML = `
+      const buttonContainer = document.querySelector('#button-container');
+      buttonContainer.innerHTML = `
+         <Link
+          to="/userProfile"
+          id="button-container"
+          className="p-5 bg-purple-400"
+        >
+          Go back to dashboard
+        </Link>
+      `;
+    } else {
+      const data = await response.json();
+      console.log(data);
+      const errorContainer = document.querySelector('#error-container');
+      errorContainer.innerHTML = `
   <div class="text-xl font-semibold  text-red-500">Please complete the required fields in asterisks '*'</div>
 `;
+    }
   };
 
   return (
@@ -60,7 +68,6 @@ function ApplyNow() {
         <h2 id="h2-container" className=" font-bold text-4xl md:text-5xl ">
           Application Form
         </h2>
-        <button id="button-container"></button>
       </section>
       <div className="flex items-center justify-center">
         <form onSubmit={handleSubmit} id="form-container">
@@ -190,7 +197,7 @@ function ApplyNow() {
                   </div>
                 </div>
               </div>
-              <div id="error-container"></div>
+              <div id="error-container">-</div>
               <section className="text-gray-700 body-font relative md:items-start">
                 <div className="container mx-auto flex sm:flex-nowrap flex-wrap">
                   <div className=" bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
@@ -278,6 +285,16 @@ function ApplyNow() {
           </div>
         </form>
       </div>{' '}
+      <section className="flex bg-white py-4 mt-5 items-center justify-center">
+        <Link
+          to="/userProfile"
+          id="button-container"
+          className="p-5 bg-purple-400"
+        >
+          Go back to dashboard
+        </Link>
+       
+      </section>
     </div>
   );
 }
