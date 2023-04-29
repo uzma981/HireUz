@@ -9,10 +9,10 @@ export default function Recruiter({ img, name, description }) {
         alt="image of team member"
       />
 
-      <h5 className="uppercase text-lg font-bold mb-4 lg:text-2xl">{name}</h5>
+      <h1 className="uppercase text-lg font-bold mb-4 lg:text-2xl">{name}</h1>
       <p className="mb-6">{description}</p>
       <ul className="list-inside flex mx-auto justify-center">
-        <a href="#!" className="px-2">
+        <a href="#!" alt="github link" className="px-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 496 512"
@@ -24,7 +24,7 @@ export default function Recruiter({ img, name, description }) {
             />
           </svg>
         </a>
-        <a href="#!" className="px-2">
+        <a href="#!" alt = "twitter link"className="px-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 512 512"
@@ -36,7 +36,7 @@ export default function Recruiter({ img, name, description }) {
             />
           </svg>
         </a>
-        <a href="#!" className="px-2">
+        <a href="#!" alt="linkedin link" className="px-2">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             viewBox="0 0 448 512"

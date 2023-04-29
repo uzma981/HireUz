@@ -6,19 +6,19 @@ export default function Footer() {
       <footer className="bg-gray-900 text-center text-neutral-600  lg:text-left">
         <div className="flex items-center justify-centerlg:justify-between"></div>
         <div className="mx-6 py-10 text-center md:text-left">
-          <div className=" text-purple-500 grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
-            <div className="text-gray-400">
-              <h6 className=" text-purple-700 mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
+          <div className=" text-purple-300 grid-1 grid gap-8 md:grid-cols-2 lg:grid-cols-4">
+            <div className="text-gray-300">
+              <h1 className=" text-purple-200 mb-4 flex items-center justify-center font-semibold uppercase md:justify-start">
                 HIRE UZ
-              </h6>
+              </h1>
               <p className="">
                 We are a recruitment agency based in Manchester and we aim to hire more women in technology roles
               </p>
             </div>
             <div className="">
-              <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
+              <h1 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
                 Services
-              </h6>
+              </h1>
               <p className="mb-4">
                 <a href="#!" className="text-neutral-300 dark:text-neutral-200">
                   1-1 Support
@@ -41,9 +41,9 @@ export default function Footer() {
               </p>
             </div>
             <div className="">
-              <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
+              <h1 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
                 Useful links
-              </h6>
+              </h1>
               <p className="mb-4">
              
                 <Link to="/candidates" className="text-neutral-300">
@@ -67,9 +67,9 @@ export default function Footer() {
               </p>
             </div>
             <div className="text-gray-300">
-              <h6 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
+              <h1 className="mb-4 flex justify-center font-semibold uppercase md:justify-start">
                 Contact
-              </h6>
+              </h1>
               <p className="mb-4 flex items-center justify-center md:justify-start">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"

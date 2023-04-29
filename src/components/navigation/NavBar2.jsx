@@ -144,7 +144,7 @@ export default function NavBar2() {
         ) : (
           <Link
             to="/login"
-            className="btn bg-purple-500 hover:bg-purple-900 px-5 font-medium mr-3"
+            className="btn bg-purple-300 text-black hover:bg-purple-400 px-5 font-medium mr-3"
           >
             Login
           </Link>

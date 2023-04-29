@@ -48,11 +48,9 @@ function ApplyNow() {
   return (
     <div>
       <section className="flex bg-white py-4 mt-5 items-center justify-center">
-    
-          <h2 id="h2-container" className=" font-bold text-4xl md:text-5xl ">
-            Application Form
-          </h2>
-      
+        <h2 id="h2-container" className=" font-bold text-4xl md:text-5xl ">
+          Application Form
+        </h2>
       </section>
       <div className="flex items-center justify-center">
         <form onSubmit={handleSubmit} id="form-container">
@@ -186,29 +184,29 @@ function ApplyNow() {
                   <div className=" bg-white flex flex-col md:ml-auto w-full md:py-8 mt-8 md:mt-0">
                     <div className="relative mb-4">
                       <label
-                        htmlFor="message"
+                        htmlFor="message1"
                         className="leading-7 text-sm text-gray-600"
                       >
                         Tell me about yourself (Max 500 words)
                       </label>
                       <textarea
-                        id="message"
-                        name="message"
+                        id="aboutmessage"
+                        name="aboutmessage"
                         onChange={(e) => setquestionOne(e.target.value)}
                         className="w-full bg-white rounded border border-gray-400 focus:border-purple-700 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                       ></textarea>
                     </div>
                     <div className="relative mb-4">
                       <label
-                        htmlFor="message"
+                        htmlFor="message2"
                         className="leading-7 text-sm text-gray-600"
                       >
                         What motivates you to apply to this job role? (Max 200
                         words)
                       </label>
                       <textarea
-                        id="message"
-                        name="message"
+                        id="motivatemessage"
+                        name="motivatemessage"
                         onChange={(e) => setquestionTwo(e.target.value)}
                         className="w-full bg-white rounded border border-gray-400 focus:border-purple-700 focus:ring-2 focus:ring-indigo-200 h-32 text-base outline-none text-gray-700 py-1 px-3 resize-none leading-6 transition-colors duration-200 ease-in-out"
                       ></textarea>
