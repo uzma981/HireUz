@@ -17,6 +17,10 @@ export default function SignUpForm() {
           navigate('/login'); // redirect user to login page
       })
       .catch((error) => {
+          const errorContainer = document.querySelector('#error-container');
+          errorContainer.innerHTML = `
+  <div class="text-xs font-semibold mb-5 text-red-500">Please fill in required fields</div>
+`;
         console.log(error);
       });
   };
@@ -29,7 +33,7 @@ export default function SignUpForm() {
       <form onSubmit={signup}>
         <div className="mt-8">
           <div>
-            <label className="text-lg font-medium">Email</label>
+            <label className="text-lg font-medium">Email*</label>
             <input
               value={email}
               onChange={(text) => setEmail(text.target.value)}
@@ -38,7 +42,7 @@ export default function SignUpForm() {
             />
           </div>
           <div>
-            <label className="text-lg font-medium">Password</label>
+            <label className="text-lg font-medium">Password*</label>
             <input
               className="w-full border-2 border-gray-100 rounded-xl p-4 mt-2 bg-transparent"
               placeholder="Enter your password:"
@@ -47,6 +51,7 @@ export default function SignUpForm() {
               onChange={(text) => setPassword(text.target.value)}
             />
           </div>
+          <div id="error-container"></div>
           <div className="mt-8 flex justify-between items-center">
             <div>
               <input type="checkbox" id="remember"></input>

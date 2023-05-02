@@ -13,11 +13,13 @@ export default function LoginForm() {
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
-        // const id = localStorage.setItem('id');
-        // const token = localStorage.setItem('token');
         navigate('/userProfile');
       })
       .catch((error) => {
+         const errorContainer = document.querySelector('#error-container');
+         errorContainer.innerHTML = `
+  <div class="text-xs font-semibold mb-5 text-red-500">Please input correct details</div>
+`;
         console.log(error);
       });
   };
@@ -48,6 +50,7 @@ export default function LoginForm() {
               onChange={(text) => setPassword(text.target.value)}
             />
           </div>
+          <div id = "error-container"></div>
           <div className="mt-8 flex justify-between items-center">
             <div>
               <input type="checkbox" id="remember"></input>
