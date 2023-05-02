@@ -63,16 +63,16 @@ function ApplyNow() {
   };
 
   return (
-    <div>
-      <section className="flex bg-white py-4 mt-5 items-center justify-center">
+    <div className="m-5">
+      <section className="flex bg-white py-4  mt-5 items-center justify-center">
         <h2 id="h2-container" className=" font-bold text-4xl md:text-5xl ">
           Application Form
         </h2>
       </section>
       <div className="flex items-center justify-center">
-        <form onSubmit={handleSubmit} id="form-container">
+        <form onSubmit={handleSubmit} id="form-container" className="">
           <div className="w-full px-8">
-            <div className="xl:px-24">
+            <div className="sm:px-10 xl:px-24">
               <div className="px-5 py-4 bg-gray-200 rounded-lg flex items-center justify-between mt-7">
                 <div className="flex items-center">
                   <div className="flex-shrink-0">
@@ -235,7 +235,7 @@ function ApplyNow() {
               </section>
             </div>
             <div className="flex flex-col justify-center mt-5 md:flex-row">
-              <div className="mb-3 w-full md:w-96">
+              <div className="mb-3 w-full md:w-96 sm:px-10">
                 <label
                   htmlFor="formFile"
                   className="mb-2 inline-block text-neutral-700 dark:text-neutral-200"
@@ -257,7 +257,7 @@ function ApplyNow() {
                   }}
                 />
               </div>
-              <div className="mb-3 w-full md:ml-5 md:w-96">
+              <div className="mb-3 w-full md:ml-5 md:w-96 sm:px-10">
                 <label
                   htmlFor="formFile"
                   className="mb-2 inline-block text-neutral-700 dark:text-neutral-200"
@@ -273,7 +273,7 @@ function ApplyNow() {
               </div>
             </div>
           </div>{' '}
-          <div className="flex items-center justify-center w-full px-7 md:justify-center ">
+          <div className="flex items-center justify-center w-full px-7 md:justify-center sm:px-20">
             <button
               placeholder="submit"
               type="submit"
@@ -293,7 +293,6 @@ function ApplyNow() {
         >
           Go back to dashboard
         </Link>
-       
       </section>
     </div>
   );
