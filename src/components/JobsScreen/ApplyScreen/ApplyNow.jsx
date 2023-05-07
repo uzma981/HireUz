@@ -120,8 +120,9 @@ function ApplyNow() {
                     </h1>
                   </div>
                   <p className="mt-4 text-sm leading-5 text-gray-600">
-                    Information about the section could go here and a brief
-                    description of how this might be used.
+                    The information collected in this section is crucial for us
+                    agency to properly evaluate candidates and determine if they
+                    are a good fit for potential job opportunities.
                   </p>
                 </div>
                 <div>

@@ -1,12 +1,12 @@
-import React from 'react'
-import homeImage from '../../img/Homeimage-min.jpg'
-import codingImage from '../../img/coding-min.jpg'
+import React from 'react';
+import homeImage from '../../img/Homeimage-min.jpg';
+import codingImage from '../../img/coding-min.jpg';
 export default function Introduction() {
   return (
     <section className="dark:bg-gray-800 dark:text-gray-100">
       <div className="container max-w-xl px-6 py-12 mx-auto space-y-10 lg:px-8 lg:max-w-7xl">
         <div>
-          <h2 className="text-4xl font-bold tracking-tight text-center sm:text-5xl dark:text-gray-50">
+          <h2 className="text-4xl font-bold tracking-tight md:text-center sm:text-5xl dark:text-gray-50">
             Our Mission
           </h2>
         </div>

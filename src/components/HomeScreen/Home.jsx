@@ -10,7 +10,7 @@ import { Link } from 'react-router-dom';
 export default function Home() {
   return (
     <div className="">
-      <div className=" p-5 px-10 bg-gradient-to-r from-violet-500 to-fuchsia-500 relative w-full ">
+      <div className=" px-10 py-10 bg-gradient-to-r from-violet-500 to-fuchsia-500 relative w-full ">
         <h2 className="mt-5 uppercase text-left mb-1 text-3xl font-extrabold tracking-tight leading-none md:text-3xl xl:text-4xl md:text-center">
           Best-in-Class Recruitment for Women in Tech
         </h2>
@@ -31,7 +31,7 @@ export default function Home() {
             to="/about"
             className="inline-flex items-end  py-3 text-base font-medium text-white rounded-lg hover:text-black focus:ring-purple-500"
           >
-           Find out more
+            Find out more
             <svg
               className="w-5 h-5 ml-2 -mr-1"
               fill="currentColor"
@@ -49,7 +49,7 @@ export default function Home() {
       </div>
 
       <Introduction />
-      <Footer/>
+      <Footer />
     </div>
   );
 }
