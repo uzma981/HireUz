@@ -3,7 +3,7 @@ import SignUpForm from '../inc/SignUpForm';
 
 export default function SignUp() {
   return (
-    <div className="flex w-full ">
+    <div className="my-10 flex w-full md:my-0">
       <div className="w-full flex items-center justify-center lg:w-1/2 mt-20">
         <SignUpForm />
       </div>

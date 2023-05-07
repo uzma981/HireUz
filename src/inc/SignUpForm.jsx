@@ -1,31 +1,31 @@
-import React from "react";
+import React from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { useState } from "react";
-import { auth } from "./firebase";
-import { createUserWithEmailAndPassword } from "firebase/auth";
+import { useState } from 'react';
+import { auth } from './firebase';
+import { createUserWithEmailAndPassword } from 'firebase/auth';
 
 export default function SignUpForm() {
-  const [email, setEmail] = useState("");
- const navigate = useNavigate();
-  const [password, setPassword] = useState("");
+  const [email, setEmail] = useState('');
+  const navigate = useNavigate();
+  const [password, setPassword] = useState('');
 
   const signup = (e) => {
     e.preventDefault();
     createUserWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
-          navigate('/login'); // redirect user to login page
+        navigate('/login'); // redirect user to login page
       })
       .catch((error) => {
-          const errorContainer = document.querySelector('#error-container');
-          errorContainer.innerHTML = `
+        const errorContainer = document.querySelector('#error-container');
+        errorContainer.innerHTML = `
   <div class="text-xs font-semibold mb-5 text-red-500">Please fill in required fields</div>
 `;
         console.log(error);
       });
   };
   return (
-    <div className="bg-white border-2 border-gray-200 px-10 py-10  rounded-3xl">
+    <div className="bg-white md:border-2 md:border-gray-400 px-10 py-10  rounded-3xl">
       <h1 className="text-5xl font-semibold text-center">Sign Up</h1>
       <p className="text-center font-medium text-md text-gray-500 mt-4">
         Create an account using your email and password
@@ -61,7 +61,7 @@ export default function SignUpForm() {
               >
                 Remember for 30 days
               </label>
-            </div>{" "}
+            </div>{' '}
             <button className=" ml-5 font-medium text-base text-violet-800">
               Forgot password
             </button>
