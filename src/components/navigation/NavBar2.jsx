@@ -21,9 +21,9 @@ export default function NavBar2() {
     return unsubscribe;
   }, []);
 
-  //Function is triggered when a user clicks on a logout button. 
+  //Function is triggered when a user clicks on a logout button.
   //Uses the signOut method from Firebase's authentication API to sign the user out.
- 
+
   const handleLogout = (e) => {
     e.preventDefault();
     signOut(auth)
@@ -84,7 +84,7 @@ export default function NavBar2() {
             </li>
             <li>
               {loggedIn ? (
-                <Link to="/userProfile" className="text-purple-500">
+                <Link to="/jobs" className="text-purple-500">
                   Dashboard
                 </Link>
               ) : null}
@@ -122,7 +122,7 @@ export default function NavBar2() {
           </li>
           <li>
             {loggedIn ? (
-              <Link to="/userProfile" className="text-gray-300">
+              <Link to="/jobs" className="text-gray-300">
                 Dashboard
               </Link>
             ) : null}
@@ -140,7 +140,7 @@ export default function NavBar2() {
             className="btn bg-gray-500 hover:bg-gray-800 px-5 font-medium mr-3"
           >
             Logout
-          </a> //  The "Logout" button triggers the handleLogout function when clicked, which signs the user out and redirects to the login page. 
+          </a> //  The "Logout" button triggers the handleLogout function when clicked, which signs the user out and redirects to the login page.
         ) : (
           <Link
             to="/login"

@@ -1,4 +1,3 @@
-import React from 'react';
 import freecodeImg from '../../img/freecodecamp.png';
 import womenintechImg from '../../img/WIT.png';
 import CandidateInfo from './CandidateInfo';
@@ -6,17 +5,34 @@ import CodeAcad from '../../img/codeacad.png';
 import LinkedIn from '../../img/linkedin.png';
 import UKGOV from '../../img/UKGOV.png';
 import UDEMY from '../../img/UDEMY.png';
+import React, { useState, useEffect } from 'react';
+import { auth } from '../../inc/firebase';
+
 import img from '../../img/team2.jpg';
 import Footer from '../Footer';
+import { Link, useNavigate } from 'react-router-dom';
+
 import {
   ArrowPathIcon,
- ComputerDesktopIcon,
+  ComputerDesktopIcon,
   AcademicCapIcon,
   WrenchIcon,
-  UserIcon
-  
+  UserIcon,
 } from '@heroicons/react/24/outline';
 export default function Candidates() {
+  const [loggedIn, setLoggedIn] = useState(false);
+
+  useEffect(() => {
+    const unsubscribe = auth.onAuthStateChanged((user) => {
+      if (user) {
+        setLoggedIn(true);
+      } else {
+        setLoggedIn(false);
+      }
+    });
+    return unsubscribe;
+  }, []);
+
   const features = [
     {
       name: 'Mentorship and Career coaching',
@@ -224,7 +240,29 @@ export default function Candidates() {
           </div>
         </div>
       </div>
-
+      <div className="flex flex-col items-center justify-center bg-gray-200 py-16">
+        <h2 className="uppercase text-3xl font-bold mb-8">
+          Welcome to our job board
+        </h2>
+        <p className="text-xl mb-8">
+          We have the latest job openings just for you.
+        </p>
+        {loggedIn ? (
+          <Link
+            to="/jobs"
+            className="bg-purple-600 hover:bg-purple-400 text-white py-3 px-6 rounded-lg shadow-lg text-xl font-medium transition duration-300 ease-in-out"
+          >
+            View latest jobs
+          </Link>
+        ) : (
+          <Link
+            to="/login"
+            className="bg-purple-600 hover:bg-purple-400 text-white py-3 px-6 rounded-lg shadow-lg text-xl font-medium transition duration-300 ease-in-out"
+          >
+            View latest jobs
+          </Link>
+        )}
+      </div>
       <Footer></Footer>
     </div>
   );

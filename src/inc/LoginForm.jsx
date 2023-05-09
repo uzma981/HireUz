@@ -5,19 +5,19 @@ import { auth } from './firebase';
 import { signInWithEmailAndPassword } from 'firebase/auth';
 export default function LoginForm() {
   const [email, setEmail] = useState('');
-
   const [password, setPassword] = useState('');
   const navigate = useNavigate();
+
   const signIn = (e) => {
     e.preventDefault();
     signInWithEmailAndPassword(auth, email, password)
       .then((userCredential) => {
         console.log(userCredential);
-        navigate('/userProfile');
+        navigate('/jobs');
       })
       .catch((error) => {
-         const errorContainer = document.querySelector('#error-container');
-         errorContainer.innerHTML = `
+        const errorContainer = document.querySelector('#error-container');
+        errorContainer.innerHTML = `
   <div class="text-xs font-semibold mb-5 text-red-500">Please input correct details</div>
 `;
         console.log(error);
@@ -50,7 +50,7 @@ export default function LoginForm() {
               onChange={(text) => setPassword(text.target.value)}
             />
           </div>
-          <div id = "error-container"></div>
+          <div id="error-container"></div>
           <div className="mt-8 flex justify-between items-center">
             <div>
               <input type="checkbox" id="remember"></input>
