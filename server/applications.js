@@ -36,14 +36,10 @@ const applicationSchema = new mongoose.Schema({
       },
     },
   ],
-  CV: {
-    data: Buffer,
-    contentType: String,
+  CVupload: {
+    type: Buffer,
   },
-  coverLetter: {
-    data: Buffer,
-    contentType: String,
-  },
+  
 });
 
 const Apply = mongoose.model('Apply', applicationSchema);
