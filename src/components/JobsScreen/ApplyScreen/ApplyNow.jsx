@@ -9,16 +9,16 @@ function ApplyNow() {
   const [phoneNum, setphoneNum] = useState('');
   const [questionOne, setquestionOne] = useState('');
   const [questionTwo, setquestionTwo] = useState('');
-  const [CV, setCV] = useState(null);
-  const [coverLetter, setcoverLetter] = useState(null);
+  const [CV, setCV] = useState('');
+  const [coverLetter, setcoverLetter] = useState('');
   const { jobId } = useParams();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     const candidate = { firstName, lastName, email, phoneNum };
     const applicationQs = { questionOne, questionTwo };
-    const CVupload = { CV };
-    const CoverLetterUpload = { coverLetter };
+   
+   
     const response = await fetch('http://localhost:3000/applications', {
       method: 'POST',
       headers: {
@@ -28,12 +28,16 @@ function ApplyNow() {
         jobId,
         candidate,
         applicationQs,
-        CVupload,
-        CoverLetterUpload,
+        CVupload: CV,
+    
       }),
     });
     if (response.status === 201) {
       console.log('candidate sucessfully added');
+      //9console.log(response)
+      const data = await response.json();
+      console.log(data);
+      console.log(data.CVupload);
       const formContainer = document.querySelector('#form-container');
       formContainer.innerHTML = `
   <div class="text-2xl font-semibold mb-5 text-gray-500">Thank you for applying. We have received your application and will be in touch soon!</div>
@@ -45,7 +49,7 @@ function ApplyNow() {
       const buttonContainer = document.querySelector('#button-container');
       buttonContainer.innerHTML = `
          <Link
-          to="/userProfile"
+          to="/jobs"
           id="button-container"
           className="p-5 bg-purple-400"
         >
@@ -288,7 +292,7 @@ function ApplyNow() {
       </div>{' '}
       <section className="flex bg-white py-4 mt-5 items-center justify-center">
         <Link
-          to="/userProfile"
+          to="/jobs"
           id="button-container"
           className="p-5 bg-purple-400"
         >

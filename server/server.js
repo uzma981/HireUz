@@ -117,14 +117,15 @@ app.post('/jobs', async (req, res) => {
 });
 
 app.post('/applications', async (req, res) => {
-  const { jobId, candidate, applicationQs, CV, coverLetter } = req.body;
+  const { jobId, candidate, applicationQs, CVupload } =
+    req.body;
   try {
     const applications = await Apply.create({
       jobId,
       candidate,
       applicationQs,
-      CV,
-      coverLetter,
+      CVupload,
+    
     });
     res.status(201).json(applications);
   } catch (err) {
